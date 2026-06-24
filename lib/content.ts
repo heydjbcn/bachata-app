@@ -124,24 +124,28 @@ export const MUSICIANS: {
   name: string;
   image: string;
   text: string;
+  youtubeId: string;
 }[] = [
   {
     role: "Lead Guitar",
     name: "René Rojas",
     image: "/assets/MINIATURA-BACHATAPP-STUDIO-LEAD-GUITAR-1-scaled.webp",
     text: "Play with instruments, rhythms, timing, syncopations, speeds and counts.",
+    youtubeId: "6dvxGhDuido",
   },
   {
     role: "Bass Player",
     name: "Nelson Yánez",
     image: "/assets/MINIATURA-BACHATAPP-STUDIO-BASS-PLAYER-scaled.webp",
     text: "Play with instruments, rhythms, timing, syncopations, speeds and counts.",
+    youtubeId: "qvAm2EEOtbE",
   },
   {
     role: "Saxophonist",
     name: "Juan Sin Miedo",
     image: "/assets/MINIATURA-BACHATAPP-STUDIO-SAXOFONISTA-1-scaled.webp",
     text: "Play with instruments, rhythms, timing, syncopations, speeds and counts.",
+    youtubeId: "FfeX-tVETrs",
   },
 ];
 

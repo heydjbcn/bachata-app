@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { Music, ChevronLeft, ChevronRight } from "lucide-react";
+import { Music } from "lucide-react";
 
 // Padding lateral que alinea la primera tarjeta con el contenido centrado
 // (mismo cálculo que .container-x: max-width 1180px + 1.25rem de padding).
@@ -12,15 +11,6 @@ export function FeatureGrid() {
   const t = useTranslations("features");
   const items = t.raw("items") as string[];
   const bodies = t.raw("bodies") as string[];
-  const scroller = useRef<HTMLDivElement>(null);
-
-  const scrollByCard = (dir: number) => {
-    const el = scroller.current;
-    if (!el) return;
-    const card = el.querySelector("article");
-    const amount = card ? card.clientWidth + 20 : el.clientWidth * 0.8;
-    el.scrollBy({ left: dir * amount, behavior: "smooth" });
-  };
 
   return (
     <section id="features" className="bg-black py-20">
@@ -37,9 +27,8 @@ export function FeatureGrid() {
       </div>
 
       {/* fila a sangre: ancho completo, las tarjetas se esconden fuera del
-          margen derecho. Trackpad / swipe / rueda + flechas. */}
+          margen derecho. Trackpad / swipe / rueda. */}
       <div
-        ref={scroller}
         className="mt-12 flex snap-x snap-mandatory overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         style={{ scrollPaddingLeft: EDGE }}
       >
@@ -62,26 +51,6 @@ export function FeatureGrid() {
             </article>
           ))}
         </div>
-      </div>
-
-      {/* flechas */}
-      <div className="container-x mt-8 flex items-center justify-center gap-3">
-        <button
-          type="button"
-          onClick={() => scrollByCard(-1)}
-          aria-label="Previous"
-          className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
-        >
-          <ChevronLeft className="size-5" />
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollByCard(1)}
-          aria-label="Next"
-          className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
-        >
-          <ChevronRight className="size-5" />
-        </button>
       </div>
     </section>
   );
