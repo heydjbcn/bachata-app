@@ -137,7 +137,7 @@ export function Mixer() {
     apply: (v: number) => void,
   ) => {
     cancelAnim(key);
-    const dur = 1300;
+    const dur = 1820;
     const t0 = performance.now();
     // easeInOutCubic: arranca y termina suave para que se vea la progresión
     const ease = (p: number) =>
