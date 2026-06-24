@@ -20,7 +20,7 @@ export function CtaBand({
         <p className="mt-4 font-heading text-base font-bold uppercase tracking-wide text-[#c2540a]">
           {subtitle}
         </p>
-        {badges && <StoreBadges variant="black" className="mt-7 justify-center" />}
+        {badges && <StoreBadges className="mt-7 justify-center" />}
       </div>
     </section>
   );

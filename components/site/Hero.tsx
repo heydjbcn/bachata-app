@@ -39,7 +39,7 @@ export function Hero() {
             {t("subtitle")}
           </p>
 
-          <StoreBadges variant="white" className="mt-8" />
+          <StoreBadges className="mt-8" />
 
           {/* stats */}
           <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
