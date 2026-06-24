@@ -61,7 +61,8 @@ export function Mixer() {
       s.connect(ctx.destination);
       s.start(0);
     } catch {}
-    const node = ctx.createScriptProcessor(BUFFER_SIZE, 0, 2);
+    // OJO iOS: con 0 canales de entrada NO dispara onaudioprocess. Usar 1.
+    const node = ctx.createScriptProcessor(BUFFER_SIZE, 1, 2);
     const tmp = new Float32Array(BUFFER_SIZE * 2);
     node.onaudioprocess = (e: AudioProcessingEvent) => {
       const L = e.outputBuffer.getChannelData(0);
