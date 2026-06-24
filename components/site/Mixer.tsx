@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { SoundTouch, SimpleFilter, WebAudioBufferSource } from "soundtouchjs";
 import { Play, Pause, Timer, Loader2, RotateCcw } from "lucide-react";
 import { MIXER_SONG, MIXER_STEMS } from "@/lib/content";
 
@@ -18,6 +19,8 @@ function fmt(t: number) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
+const BUFFER_SIZE = 4096;
+
 export function Mixer() {
   const tr = useTranslations("mixer");
   const stemNames = tr.raw("stems") as string[];
@@ -29,91 +32,96 @@ export function Mixer() {
   const [duration, setDuration] = useState(0);
   const [pos, setPos] = useState(0);
 
-  // motor: AudioBufferSourceNode (sincronía exacta entre stems)
+  // motor: 1 ScriptProcessor + 8 SoundTouch (time-stretch: velocidad sin tono)
   const ctxRef = useRef<AudioContext | null>(null);
-  const buffersRef = useRef<AudioBuffer[]>([]);
-  const gainsRef = useRef<GainNode[]>([]);
-  const sourcesRef = useRef<AudioBufferSourceNode[]>([]);
-  const startedAtRef = useRef(0); // ctx.currentTime del arranque
-  const offsetRef = useRef(0); // segundos dentro del track al arrancar
-  const rateRef = useRef(1);
+  const nodeRef = useRef<ScriptProcessorNode | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const stRef = useRef<any[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const filtersRef = useRef<any[]>([]);
+  const gainsRef = useRef<number[]>(MIXER_STEMS.map(() => 1));
+  const playingRef = useRef(false);
+  const endedRef = useRef(false);
+  const srRef = useRef(44100);
   const rafRef = useRef<number | null>(null);
 
-  const currentPos = () => {
-    const ctx = ctxRef.current;
-    if (!ctx || !playing) return offsetRef.current;
-    return (
-      offsetRef.current +
-      Math.max(0, ctx.currentTime - startedAtRef.current) * rateRef.current
-    );
-  };
-
-  // crea el contexto + gains (síncrono, dentro del gesto → desbloquea iOS)
+  // crea el contexto + script node (síncrono → desbloquea iOS)
   const initCtx = () => {
     if (ctxRef.current) return;
     const ctx = new (window.AudioContext ||
       (window as unknown as { webkitAudioContext: typeof AudioContext })
         .webkitAudioContext)();
     ctxRef.current = ctx;
-    gainsRef.current = MIXER_STEMS.map((_, i) => {
-      const g = ctx.createGain();
-      g.gain.value = levels[i] / 100;
-      g.connect(ctx.destination);
-      return g;
+    srRef.current = ctx.sampleRate;
+    const node = ctx.createScriptProcessor(BUFFER_SIZE, 0, 2);
+    const tmp = new Float32Array(BUFFER_SIZE * 2);
+    node.onaudioprocess = (e: AudioProcessingEvent) => {
+      const L = e.outputBuffer.getChannelData(0);
+      const R = e.outputBuffer.getChannelData(1);
+      L.fill(0);
+      R.fill(0);
+      if (!playingRef.current) return;
+      const filters = filtersRef.current;
+      let maxGot = 0;
+      for (let i = 0; i < filters.length; i++) {
+        const got = filters[i].extract(tmp, BUFFER_SIZE); // avanza posición
+        if (got > maxGot) maxGot = got;
+        const g = gainsRef.current[i];
+        if (g > 0) {
+          for (let j = 0; j < got; j++) {
+            L[j] += tmp[j * 2] * g;
+            R[j] += tmp[j * 2 + 1] * g;
+          }
+        }
+      }
+      if (maxGot === 0) {
+        playingRef.current = false;
+        endedRef.current = true;
+      }
+    };
+    nodeRef.current = node;
+  };
+
+  const buildFilters = (buffers: AudioBuffer[]) => {
+    const rate = speed / 100;
+    const sts: unknown[] = [];
+    const filters: unknown[] = [];
+    buffers.forEach((buf) => {
+      const source = new WebAudioBufferSource(buf);
+      const st = new SoundTouch();
+      st.tempo = rate; // velocidad
+      st.pitch = 1; // tono intacto (key)
+      const filter = new SimpleFilter(source, st);
+      sts.push(st);
+      filters.push(filter);
     });
+    stRef.current = sts;
+    filtersRef.current = filters;
   };
 
   const loadBuffers = async () => {
     const ctx = ctxRef.current!;
     const buffers = await Promise.all(
-      MIXER_STEMS.map(async (st) => {
-        const res = await fetch(st.file);
+      MIXER_STEMS.map(async (s) => {
+        const res = await fetch(s.file);
         const arr = await res.arrayBuffer();
         return await ctx.decodeAudioData(arr);
       }),
     );
-    buffersRef.current = buffers;
     setDuration(Math.max(...buffers.map((b) => b.duration)));
+    buildFilters(buffers);
     setReady(true);
   };
 
-  const startSources = (offset: number) => {
-    const ctx = ctxRef.current!;
-    const when = ctx.currentTime + 0.06; // mismo instante para los 8
-    const sources = buffersRef.current.map((buf, i) => {
-      const src = ctx.createBufferSource();
-      src.buffer = buf;
-      src.playbackRate.value = rateRef.current;
-      src.connect(gainsRef.current[i]);
-      return src;
-    });
-    sources.forEach((s) => s.start(when, offset));
-    sourcesRef.current = sources;
-    startedAtRef.current = when;
-    offsetRef.current = offset;
-    sources[0].onended = () => {
-      if (!sourcesRef.current.includes(sources[0])) return; // parado a mano
-      stopSources();
-      offsetRef.current = 0;
-      setPos(0);
-      setPlaying(false);
-    };
-  };
-
-  const stopSources = () => {
-    sourcesRef.current.forEach((s) => {
-      try {
-        s.onended = null;
-        s.stop();
-      } catch {}
-    });
-    sourcesRef.current = [];
-  };
+  const currentPos = () =>
+    filtersRef.current[0]
+      ? filtersRef.current[0].sourcePosition / srRef.current
+      : 0;
 
   const togglePlay = async () => {
     if (playing) {
-      offsetRef.current = currentPos();
-      stopSources();
+      playingRef.current = false;
+      nodeRef.current?.disconnect();
       setPlaying(false);
       return;
     }
@@ -130,36 +138,36 @@ export function Mixer() {
       }
       setLoading(false);
     }
-    let off = offsetRef.current;
-    if (off >= duration - 0.05) off = 0;
-    startSources(off);
+    // reiniciar si estaba al final
+    if (currentPos() >= duration - 0.1) seekTo(0);
+    endedRef.current = false;
+    playingRef.current = true;
+    nodeRef.current!.connect(ctxRef.current!.destination);
     setPlaying(true);
   };
 
   const setLevel = (i: number, v: number) => {
     setLevels((prev) => prev.map((x, idx) => (idx === i ? v : x)));
-    if (gainsRef.current[i]) gainsRef.current[i].gain.value = v / 100;
+    gainsRef.current[i] = v / 100;
   };
 
   const changeSpeed = (v: number) => {
     setSpeed(v);
     const rate = v / 100;
-    if (playing && ctxRef.current) {
-      offsetRef.current = currentPos();
-      startedAtRef.current = ctxRef.current.currentTime;
-    }
-    rateRef.current = rate;
-    sourcesRef.current.forEach((s) => (s.playbackRate.value = rate));
+    stRef.current.forEach((st) => (st.tempo = rate)); // sin tocar pitch
   };
 
-  const seek = (t: number) => {
-    offsetRef.current = t;
+  const seekTo = (t: number) => {
+    const sr = srRef.current;
+    filtersRef.current.forEach((f) => {
+      try {
+        f.sourcePosition = Math.floor(t * sr);
+        f.clear();
+      } catch {}
+    });
     setPos(t);
-    if (playing) {
-      stopSources();
-      startSources(t);
-    }
   };
+  const seek = (t: number) => seekTo(t);
 
   // animación de retorno progresivo a 100%
   const animRef = useRef<Record<string, number>>({});
@@ -183,9 +191,8 @@ export function Mixer() {
     const step = (now: number) => {
       const p = Math.min(1, (now - t0) / dur);
       apply(Math.round(from + (to - from) * ease(p)));
-      if (p < 1) {
-        animRef.current[key] = requestAnimationFrame(step);
-      } else {
+      if (p < 1) animRef.current[key] = requestAnimationFrame(step);
+      else {
         apply(to);
         delete animRef.current[key];
       }
@@ -196,10 +203,18 @@ export function Mixer() {
     animateTo("s" + i, levels[i], 100, (v) => setLevel(i, v));
   const resetSpeed = () => animateTo("speed", speed, 100, (v) => changeSpeed(v));
 
-  // bucle de progreso
+  // bucle de progreso + detección de fin
   useEffect(() => {
     if (!playing) return;
     const tick = () => {
+      if (endedRef.current) {
+        endedRef.current = false;
+        nodeRef.current?.disconnect();
+        seekTo(0);
+        setPos(0);
+        setPlaying(false);
+        return;
+      }
       setPos(Math.min(currentPos(), duration));
       rafRef.current = requestAnimationFrame(tick);
     };
@@ -214,7 +229,8 @@ export function Mixer() {
     const anims = animRef.current;
     return () => {
       Object.values(anims).forEach((id) => cancelAnimationFrame(id));
-      stopSources();
+      playingRef.current = false;
+      nodeRef.current?.disconnect();
       ctxRef.current?.close();
     };
   }, []);
