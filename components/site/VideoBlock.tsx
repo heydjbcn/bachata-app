@@ -1,9 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Play } from "lucide-react";
 
 export function VideoBlock() {
+  const t = useTranslations("video");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -18,7 +20,7 @@ export function VideoBlock() {
     <section className="bg-black py-20">
       <div className="container-x">
         <h2 className="mx-auto max-w-2xl text-center font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">
-          Professional tools accessible to every teacher and student.
+          {t("title")}
         </h2>
 
         <div className="group relative mx-auto mt-12 aspect-[16/10] max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-black">
@@ -39,7 +41,7 @@ export function VideoBlock() {
             <button
               type="button"
               onClick={play}
-              aria-label="Play video"
+              aria-label={t("play")}
               className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/30"
             >
               <span className="flex size-20 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform group-hover:scale-110">

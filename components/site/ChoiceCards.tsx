@@ -1,13 +1,16 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Music } from "lucide-react";
-import { CHOICE_LOGOS, MINI_REVIEWS } from "@/lib/content";
+import { CHOICE_LOGOS } from "@/lib/content";
 
 export function ChoiceCards() {
+  const t = useTranslations("choice");
+  const miniReviews = t.raw("miniReviews") as { title: string; text: string }[];
   return (
     <section className="bg-black py-20">
       <div className="container-x">
         <h2 className="text-center font-heading text-4xl font-bold text-white sm:text-5xl">
-          The choice of the best.
+          {t("title")}
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -23,21 +26,18 @@ export function ChoiceCards() {
                 />
               </div>
               <p className="mt-4 text-xs uppercase tracking-wide text-white/40">
-                2022
+                {t("year")}
               </p>
               <p className="mt-1 font-heading text-lg font-semibold text-white">
-                BachatAppStudio: The App
+                {t("appName")}
               </p>
-              <p className="mt-1 text-sm text-white/50">
-                Dance with the instruments
-              </p>
+              <p className="mt-1 text-sm text-white/50">{t("tagline")}</p>
             </div>
           ))}
         </div>
 
-        {/* mini reseñas */}
         <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {MINI_REVIEWS.map((r, i) => (
+          {miniReviews.map((r, i) => (
             <div key={i}>
               <Music className="size-7 text-[#ff914d]" />
               <h3 className="mt-3 font-heading text-lg font-semibold text-white">

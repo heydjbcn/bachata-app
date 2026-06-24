@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Gauge, BarChart3 } from "lucide-react";
 import { StoreBadges } from "@/components/site/StoreBadges";
-import { HERO_STATS } from "@/lib/content";
 
 export function Hero() {
+  const t = useTranslations("hero");
+  const stats = t.raw("stats") as { value: string; label: string }[];
   return (
     <section
       id="top"
@@ -19,29 +21,28 @@ export function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-[#ff914d]/30 bg-[#ff914d]/10 px-4 py-1.5 text-sm font-medium text-[#ffb98a]">
             <span className="size-2 rounded-full bg-[#ff914d]" />
-            Trusted by pro bachata dancers &amp; musicians
+            {t("badge")}
           </span>
 
           <h1 className="mt-6 font-heading text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Teach and learn
+            {t("titleLine1")}
             <br />
-            bachata, the
+            {t("titleLine2")}
             <br />
-            <span className="text-gradient lowercase italic">easy way.</span>
+            <span className="text-gradient lowercase italic">
+              {t("titleAccent")}
+            </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/60">
-            Play with instruments, rhythms, syncopations, speeds and counts —
-            taking your knowledge and your students&apos; to the next level. The
-            ultimate immersive practice experience, powered by the best
-            instructors and musicians of the genre.
+            {t("subtitle")}
           </p>
 
           <StoreBadges variant="white" className="mt-8" />
 
           {/* stats */}
           <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
-            {HERO_STATS.map((s, i) => (
+            {stats.map((s, i) => (
               <div
                 key={i}
                 className={i > 0 ? "border-l border-white/10 pl-10" : ""}
@@ -80,7 +81,7 @@ export function Hero() {
             <Gauge className="size-4 text-[#ff914d]" />
             <div className="leading-tight">
               <p className="text-[10px] uppercase tracking-wide text-white/50">
-                Speed
+                {t("chipSpeed")}
               </p>
               <p className="font-heading text-base font-bold text-white">100%</p>
             </div>
@@ -91,10 +92,10 @@ export function Hero() {
             <BarChart3 className="size-4 text-[#ff914d]" />
             <div className="leading-tight">
               <p className="text-[10px] uppercase tracking-wide text-white/50">
-                Live stems
+                {t("chipLiveStems")}
               </p>
               <p className="font-heading text-base font-bold text-white">
-                9 tracks
+                {t("chipTracks")}
               </p>
             </div>
           </div>

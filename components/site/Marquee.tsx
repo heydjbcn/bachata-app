@@ -1,8 +1,9 @@
-import { MARQUEE_WORDS } from "@/lib/content";
+import { useTranslations } from "next-intl";
 
 export function Marquee() {
-  // duplicado x2 para loop continuo (translateX -50%)
-  const seq = [...MARQUEE_WORDS, ...MARQUEE_WORDS, ...MARQUEE_WORDS, ...MARQUEE_WORDS];
+  const t = useTranslations("marquee");
+  const words = t.raw("words") as string[];
+  const seq = [...words, ...words, ...words, ...words];
   return (
     <div className="overflow-hidden border-y border-white/10 bg-[#0a0a0a] py-5">
       <div className="marquee-track">

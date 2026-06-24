@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "title": "BachatAppStudio — O app para professores e alunos de bachata",
+    "description": "Ensine e aprenda bachata fácil. Brinque com os stems, ajuste a velocidade, separe instrumentos e domine a bachata e o merengue com ferramentas profissionais."
+  },
+  "header": {
+    "features": "Recursos",
+    "mixer": "Mixer",
+    "musicians": "Músicos",
+    "reviews": "Avaliações",
+    "getApp": "Baixar o app",
+    "openMenu": "Abrir menu",
+    "changeLanguage": "Mudar idioma"
+  },
+  "hero": {
+    "badge": "A escolha de dançarinos e músicos profissionais de bachata",
+    "titleLine1": "Ensine e aprenda",
+    "titleLine2": "bachata da",
+    "titleAccent": "forma fácil.",
+    "subtitle": "Brinque com instrumentos, ritmos, síncopas, velocidades e tempos — levando o seu conhecimento e o dos seus alunos para o próximo nível. A experiência de prática imersiva definitiva, impulsionada pelos melhores instrutores e músicos do gênero.",
+    "stats": [
+      { "value": "8+", "label": "Estilos de bachata" },
+      { "value": "9", "label": "Stems de instrumentos reais" },
+      { "value": "50-150%", "label": "Controle de velocidade" }
+    ],
+    "chipSpeed": "Velocidade",
+    "chipLiveStems": "Stems ao vivo",
+    "chipTracks": "9 faixas"
+  },
+  "marquee": {
+    "words": ["INOVE", "INSPIRE", "LIDERE", "ENSINE", "APRENDA", "DANCE"]
+  },
+  "mixer": {
+    "eyebrow": "Inove · Inspire · Lidere",
+    "title": "Brinque com os stems. Ajuste a velocidade.",
+    "description": "Ajuste o volume de cada instrumento individualmente, destacando o que você precisa durante as suas aulas. Vá em frente — experimente o mixer.",
+    "highlights": [
+      "6 stems separados reais",
+      "Silencie qualquer instrumento ao vivo",
+      "Velocidade 50–150% — sem alterar o tom"
+    ],
+    "subtitleStems": "Multipista ao vivo · 6 stems",
+    "statusPlaying": "Reproduzindo · multipista ao vivo",
+    "loading": "Carregando stems…",
+    "speed": "Velocidade",
+    "play": "Reproduzir",
+    "pause": "Pausar",
+    "seek": "Buscar",
+    "resetTo100": "Voltar para 100%",
+    "resetSpeed": "Redefinir velocidade para 100%",
+    "stems": ["Baixo", "Guitarra", "Piano", "Percussão", "Vozes", "Outros"]
+  },
+  "featureSplit": {
+    "eyebrow": "Domine a bachata e o merengue com ferramentas inteligentes",
+    "title": "Ajuste o BPM, separe os stems e crie algo único.",
+    "text": "Ensine e aprenda com precisão e profissionalismo, com o respaldo dos melhores dançarinos e músicos de bachata do mundo.",
+    "chips": ["Isole qualquer instrumento", "Músicos reais", "Som de qualidade de estúdio"]
+  },
+  "features": {
+    "eyebrow": "Impulsionado pela inovação",
+    "title": "Aperfeiçoado por dançarinos e",
+    "titleAccent": "músicos profissionais de bachata.",
+    "description": "Chega de ficar trocando de app ou perder tempo procurando formas de melhorar as suas aulas. Explore, adapte e domine a bachata com ferramentas projetadas para deixar a sua criatividade fluir sem limites.",
+    "learnMore": "Saiba mais",
+    "body": "Ajuste o volume de cada instrumento individualmente, destacando o que você precisa durante as suas aulas.",
+    "items": [
+      "Controle a velocidade de qualquer faixa para praticar sem frustração.",
+      "Aprenda a dançar em tempos diferentes com clareza e precisão.",
+      "Divida os estilos de bachata em seções claras e fáceis de entender.",
+      "Brinque com os instrumentos da bachata e suas combinações únicas.",
+      "Detecte as mudanças rítmicas e seus avisos prévios como um profissional.",
+      "Domine a síncopa para adicionar dinamismo e surpresa à sua dança.",
+      "Mergulhe na essência do merengue — aprenda-o e leve-o às suas aulas.",
+      "Salve suas faixas e exercícios favoritos em um só lugar."
+    ]
+  },
+  "appHeadline": {
+    "title": "O app para professores e alunos de bachata.",
+    "accent": "Ensine e aprenda bachata fácil.",
+    "text": "Brinque com instrumentos, ritmos, tempos, síncopas, velocidades e compassos — levando o seu conhecimento e o dos seus alunos para o próximo nível. A experiência de prática imersiva definitiva, impulsionada pelos melhores instrutores e músicos do gênero."
+  },
+  "cta": {
+    "downloadHeading": "Ferramentas profissionais ao alcance de cada professor e aluno.",
+    "downloadSubtitle": "BAIXE GRÁTIS HOJE!",
+    "readyHeading": "Pronto para levar a sua dança para o próximo nível?",
+    "readySubtitle": "EXPERIMENTE GRÁTIS HOJE!"
+  },
+  "choice": {
+    "title": "A escolha dos melhores.",
+    "year": "2022",
+    "appName": "BachatAppStudio: O App",
+    "tagline": "Dance com os instrumentos",
+    "miniReviews": [
+      {
+        "title": "Profissional e direto",
+        "text": "O melhor app para ensinar e aprender a dançar bachata. Perfeito!"
+      },
+      {
+        "title": "Emocional e sincero",
+        "text": "É como dançar no coração da República Dominicana. Pura magia!"
+      },
+      {
+        "title": "Técnico e convincente",
+        "text": "Som cristalino, músicos reais e um design intuitivo. Nada se compara."
+      }
+    ]
+  },
+  "musicians": {
+    "title": "A escolha de músicos e dançarinos profissionais.",
+    "titleAccent": "Amado por milhares",
+    "titleAfter": "no mundo todo.",
+    "text": "Brinque com instrumentos, ritmos, tempos, síncopas, velocidades e compassos.",
+    "roles": ["Guitarra solo", "Baixista", "Saxofonista"]
+  },
+  "testimonials": {
+    "title": "Descubra por que milhares de professores e alunos de bachata",
+    "titleAccent": "amam o BachatAppStudio.",
+    "roleTeacher": "professor(a)",
+    "roleStudent": "aluno(a)",
+    "items": [
+      "O BachatAppStudio facilitou demais a estruturação das minhas aulas. As seções por nível e as faixas musicais são perfeitas para ensinar técnica e ritmo.",
+      "Sempre tive dificuldade em manter o ritmo, mas com este app tudo é tão claro e intuitivo que finalmente sinto que estou realmente dançando.",
+      "A qualidade do som é incrível. Uso não só para bachata, mas para apresentar aos meus alunos o merengue e o bolero. Uma verdadeira joia!",
+      "Finalmente uma ferramenta criada com conhecimento real da nossa cultura. Este app tem essência, história e uma qualidade musical rara.",
+      "Nunca aprendi tão rápido. Tudo está super bem explicado e organizado. A interface parece feita para mim.",
+      "Uso o app nas minhas aulas em grupo. Meus alunos estão viciados nas dinâmicas de prática — como um assistente de ensino profissional.",
+      "Uma revolução para nós que ensinamos ritmos latinos! Economiza meu tempo e me dá material de altíssima qualidade.",
+      "O design é intuitivo, prático e elegante. Adoro como vai do básico ao avançado — os instrumentos reais fazem toda a diferença."
+    ],
+    "places": [
+      "Espanha", "Colômbia", "França", "República Dominicana",
+      "Brasil", "Alemanha", "Argentina", "México"
+    ]
+  },
+  "video": {
+    "title": "Ferramentas profissionais ao alcance de cada professor e aluno.",
+    "play": "Reproduzir vídeo"
+  },
+  "footer": {
+    "tagline": "O app para mestres de bachata",
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos e Condições",
+    "backHome": "← Voltar ao início"
+  },
+  "privacy": {
+    "title": "Política de Privacidade do BachatApp Studio",
+    "effective": "Data de entrada em vigor: 20 de abril de 2025",
+    "intro": "Obrigado por confiar no BachatApp Studio (\"nós\", \"nosso\" ou \"o App\"). Temos o compromisso de proteger a sua privacidade e de garantir uma experiência segura ao usar nossos serviços. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos as informações pessoais que você nos fornece.",
+    "s1Title": "1. INFORMAÇÕES QUE COLETAMOS",
+    "s1a": "1.1. Informações pessoais fornecidas pelo usuário:",
+    "s1aList": [
+      "Nome, endereço de e-mail e credenciais de acesso.",
+      "Informações opcionais de perfil como foto, país e função (aluno ou professor)."
+    ],
+    "s1b": "1.2. Informações técnicas coletadas automaticamente:",
+    "s1bList": [
+      "Endereço IP, tipo de dispositivo, sistema operacional, navegador e atividade dentro do app."
+    ],
+    "s1c": "1.3. Dados de uso:",
+    "s1cList": [
+      "Estatísticas de interação dentro do app: recursos usados, frequência e padrões de uso."
+    ],
+    "s2Title": "2. COMO USAMOS SUAS INFORMAÇÕES",
+    "s2Intro": "Usamos os dados coletados para:",
+    "s2List": [
+      "Fornecer acesso aos nossos recursos e serviços.",
+      "Personalizar a sua experiência dentro do app.",
+      "Melhorar o desempenho, o conteúdo e a segurança do serviço.",
+      "Enviar notificações relevantes (você pode desativá-las nas configurações).",
+      "Cumprir obrigações legais e prevenir fraudes ou usos indevidos."
+    ],
+    "s3Title": "3. COMPARTILHAMENTO DE INFORMAÇÕES",
+    "s3a": "Não vendemos nem alugamos suas informações pessoais.",
+    "s3b": "Podemos compartilhar dados nos seguintes casos:",
+    "s3List": [
+      "Com prestadores de serviços que dão suporte à infraestrutura, armazenamento, pagamentos, etc. do App.",
+      "Quando exigido por processos legais ou cumprimento normativo.",
+      "Em caso de fusão, aquisição ou venda de ativos, com aviso prévio."
+    ],
+    "s4Title": "4. SEGURANÇA DOS DADOS",
+    "s4": "Implementamos medidas de segurança administrativas, técnicas e físicas para proteger seus dados pessoais. No entanto, nenhum sistema é completamente seguro. Em caso de violações, você será notificado conforme exigido pelas leis aplicáveis.",
+    "s5Title": "5. SEUS DIREITOS E OPÇÕES",
+    "s5Intro": "Você tem o direito de:",
+    "s5List": [
+      "Acessar, corrigir ou excluir suas informações pessoais.",
+      "Solicitar a limitação do uso dos dados.",
+      "Retirar o seu consentimento a qualquer momento."
+    ],
+    "s5Contact": "Para exercer esses direitos, entre em contato conosco em",
+    "s6Title": "6. RETENÇÃO DOS DADOS",
+    "s6": "Mantemos seus dados enquanto a sua conta estiver ativa ou conforme necessário para cumprir os fins descritos. Ao encerrar a conta, seus dados serão excluídos ou anonimizados, salvo se uma obrigação legal exigir sua retenção.",
+    "s7Title": "7. COOKIES E TECNOLOGIAS SEMELHANTES",
+    "s7": "Usamos cookies e ferramentas semelhantes para melhorar a experiência do usuário, lembrar preferências e analisar tendências de uso. Você pode gerenciar os cookies nas configurações do seu dispositivo.",
+    "s8Title": "8. PRIVACIDADE DAS CRIANÇAS",
+    "s8": "O app não é destinado a usuários com menos de 16 anos. Não coletamos intencionalmente dados de menores sem o consentimento dos pais ou responsáveis.",
+    "s9Title": "9. ALTERAÇÕES NESTA POLÍTICA",
+    "s9": "Reservamo-nos o direito de modificar esta Política de Privacidade. Quaisquer alterações substanciais serão notificadas pelo App ou por e-mail. Recomendamos que você revise esta política periodicamente.",
+    "s10Title": "10. CONTATO",
+    "s10": "Se você tiver perguntas, solicitações ou preocupações sobre esta Política de Privacidade, entre em contato conosco em:",
+    "trademark": "BachatApp Studio é uma marca registrada. Todos os direitos reservados."
+  },
+  "terms": {
+    "title": "Termos e Condições — BachatApp Studio",
+    "effective": "Data de entrada em vigor: 20 de abril de 2025",
+    "s1Title": "1. Termos",
+    "s1": "Ao acessar os apps, os usuários consentem com estes termos, as leis aplicáveis e a responsabilidade pelo cumprimento da legislação local. A discordância proíbe o uso do serviço. Os materiais são protegidos pela lei de direitos autorais e de marcas.",
+    "s2Title": "2. Licença de uso",
+    "s2a": "2.1. Os usuários podem baixar temporariamente uma cópia por dispositivo apenas para visualização pessoal e não comercial — é uma concessão de licença, não uma transferência de titularidade.",
+    "s2Prohibited": "Ações proibidas:",
+    "s2List": [
+      "2.2. Modificar ou copiar os materiais",
+      "2.3. Usá-los para fins comerciais ou exibição pública",
+      "2.4. Descompilar ou aplicar engenharia reversa ao software",
+      "2.5. Remover avisos de direitos autorais ou de propriedade",
+      "2.6. Transferir os materiais ou espelhar servidores"
+    ],
+    "s2c": "2.7. A licença é rescindida automaticamente em caso de violação e pode ser rescindida a qualquer momento. Os usuários devem destruir os materiais baixados após a rescisão.",
+    "s3Title": "3. Isenção de responsabilidade",
+    "s3": "Os materiais são fornecidos \"como estão\", sem garantias. A empresa isenta-se de todas as garantias, incluindo \"garantias ou condições implícitas de comercialização e adequação a um fim específico\".",
+    "s4Title": "4. Limitações",
+    "s4": "O BachatApp Studio e seus fornecedores não assumem responsabilidade por danos decorrentes do uso ou da impossibilidade de uso do serviço, independentemente de notificação prévia sobre o possível prejuízo.",
+    "s5Title": "5. Exatidão dos materiais",
+    "s5": "Os materiais podem conter erros. A empresa não garante sua exatidão ou integridade e pode modificar o conteúdo sem aviso prévio nem compromisso de atualização.",
+    "s6Title": "6. Links",
+    "s6": "A empresa não revisou os sites vinculados e não se responsabiliza por seu conteúdo. Os links não implicam endosso. Os usuários acessam os sites vinculados por sua conta e risco.",
+    "s7Title": "7. Modificações",
+    "s7": "Os termos podem ser revisados sem aviso prévio; o uso continuado indica a aceitação dos termos vigentes.",
+    "s8Title": "8. Legislação aplicável",
+    "s8": "Estes termos são regidos pela legislação dos EAU, com jurisdição exclusiva dos tribunais dos EAU."
+  }
+}

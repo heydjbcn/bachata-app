@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Check } from "lucide-react";
-import { SPLIT_CHIPS } from "@/lib/content";
 
 export function FeatureSplit() {
+  const t = useTranslations("featureSplit");
+  const chips = t.raw("chips") as string[];
   return (
     <section className="bg-black py-16">
       <div className="container-x">
@@ -22,17 +24,16 @@ export function FeatureSplit() {
           </div>
           <div>
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-[#ff914d]">
-              Master Bachata &amp; Merengue with smart tools
+              {t("eyebrow")}
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-white sm:text-4xl">
-              Adjust BPM, separate stems, and create something unique.
+              {t("title")}
             </h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-white/60">
-              Teach and learn with precision and professionalism, backed by the
-              world&apos;s top bachata dancers and musicians.
+              {t("text")}
             </p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {SPLIT_CHIPS.map((chip) => (
+              {chips.map((chip) => (
                 <li
                   key={chip}
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-white/80"

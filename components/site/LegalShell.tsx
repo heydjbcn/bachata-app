@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { Footer } from "@/components/site/Footer";
 
 export function LegalShell({
@@ -11,6 +12,7 @@ export function LegalShell({
   effective: string;
   children: React.ReactNode;
 }) {
+  const t = useTranslations("footer");
   return (
     <main className="bg-black">
       <header className="border-b border-white/10">
@@ -28,7 +30,7 @@ export function LegalShell({
             href="/"
             className="text-sm font-medium text-white/70 transition-colors hover:text-accent-orange"
           >
-            ← Back to home
+            {t("backHome")}
           </Link>
         </div>
       </header>

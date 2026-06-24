@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Play, Pause, Timer, Loader2, RotateCcw } from "lucide-react";
 import { MIXER_SONG, MIXER_STEMS } from "@/lib/content";
 
@@ -29,6 +30,8 @@ function setPreservePitch(el: HTMLAudioElement) {
 }
 
 export function Mixer() {
+  const tr = useTranslations("mixer");
+  const stemNames = tr.raw("stems") as string[];
   const [levels, setLevels] = useState<number[]>(MIXER_STEMS.map(() => 100));
   const [speed, setSpeed] = useState(100);
   const [playing, setPlaying] = useState(false);
@@ -205,7 +208,7 @@ export function Mixer() {
             <button
               type="button"
               onClick={togglePlay}
-              aria-label={playing ? "Pause" : "Play"}
+              aria-label={playing ? tr("pause") : tr("play")}
               className="flex size-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#ff914d] to-[#ff7a3d] text-black shadow-[0_10px_30px_-10px_rgba(255,145,77,0.8)] transition-transform hover:scale-105"
             >
               {loading ? (
@@ -222,10 +225,10 @@ export function Mixer() {
               </p>
               <p className="text-xs text-white/50">
                 {loading
-                  ? "Loading stems…"
+                  ? tr("loading")
                   : playing
-                    ? "Playing · live multitrack"
-                    : MIXER_SONG.subtitle}
+                    ? tr("statusPlaying")
+                    : tr("subtitleStems")}
               </p>
             </div>
           </div>
@@ -263,7 +266,7 @@ export function Mixer() {
             onChange={(e) => seek(Number(e.target.value))}
             className="mixer-range flex-1 disabled:opacity-50"
             style={rangeBg(duration ? (pos / duration) * 100 : 0)}
-            aria-label="Seek"
+            aria-label={tr("seek")}
           />
           <span className="w-10 font-mono text-xs text-white/50">
             {fmt(duration)}
@@ -272,22 +275,22 @@ export function Mixer() {
 
         {/* sliders por stem */}
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {MIXER_STEMS.map((t, i) => (
+          {MIXER_STEMS.map((stem, i) => (
             <div
-              key={t.name}
+              key={stem.file}
               className="rounded-2xl border border-white/8 bg-white/[0.02] p-4"
             >
               <div className="flex items-center justify-between">
                 <span className="font-heading text-base font-semibold tracking-wide text-white">
-                  {t.name}
+                  {stemNames[i]}
                 </span>
                 <div className="flex items-center gap-1.5">
                   <button
                     type="button"
                     onClick={() => resetLevel(i)}
                     disabled={levels[i] === 100}
-                    aria-label={`Reset ${t.name} to 100%`}
-                    title="Reset to 100%"
+                    aria-label={`${tr("resetTo100")} — ${stemNames[i]}`}
+                    title={tr("resetTo100")}
                     className="text-white/35 transition-colors hover:text-[#ff914d] disabled:pointer-events-none disabled:opacity-0"
                   >
                     <RotateCcw className="size-3.5" />
@@ -308,7 +311,7 @@ export function Mixer() {
                 }}
                 className="mixer-range mt-4"
                 style={rangeBg(levels[i])}
-                aria-label={`${t.name} volume`}
+                aria-label={stemNames[i]}
               />
             </div>
           ))}
@@ -319,7 +322,7 @@ export function Mixer() {
           <div className="flex items-center gap-2 sm:w-32">
             <Timer className="size-5 text-[#ff914d]" />
             <span className="font-heading text-base font-semibold uppercase tracking-wide text-white">
-              Speed
+              {tr("speed")}
             </span>
           </div>
           <input
@@ -340,8 +343,8 @@ export function Mixer() {
               type="button"
               onClick={resetSpeed}
               disabled={speed === 100}
-              aria-label="Reset speed to 100%"
-              title="Reset to 100%"
+              aria-label={tr("resetSpeed")}
+              title={tr("resetTo100")}
               className="text-white/35 transition-colors hover:text-[#ff914d] disabled:pointer-events-none disabled:opacity-0"
             >
               <RotateCcw className="size-4" />

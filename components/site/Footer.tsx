@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { STORE_LINKS } from "@/lib/content";
 
 function Facebook(props: React.SVGProps<SVGSVGElement>) {
@@ -27,6 +28,7 @@ function Youtube(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer className="bg-black pb-10 pt-14 text-center">
       <div className="container-x flex flex-col items-center">
@@ -43,9 +45,7 @@ export function Footer() {
         >
           {STORE_LINKS.email}
         </a>
-        <p className="mt-2 text-sm text-white/60">
-          The app for bachata masters
-        </p>
+        <p className="mt-2 text-sm text-white/60">{t("tagline")}</p>
 
         <div className="mt-6 flex items-center gap-5">
           <a
@@ -72,13 +72,13 @@ export function Footer() {
         </div>
 
         <p className="mt-8 text-xs text-white/45">
-          @2025 BachatAppStudio. All rights reserved. ·{" "}
+          @2025 BachatAppStudio. {t("rights")} ·{" "}
           <Link href="/privacy-policy" className="hover:text-white/80">
-            Privacy Policy
+            {t("privacy")}
           </Link>{" "}
           ·{" "}
           <Link href="/terms-and-conditions" className="hover:text-white/80">
-            Terms &amp; Conditions
+            {t("terms")}
           </Link>
         </p>
       </div>

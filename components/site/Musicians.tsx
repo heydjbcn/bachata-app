@@ -1,14 +1,16 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { MUSICIANS } from "@/lib/content";
 
 export function Musicians() {
+  const t = useTranslations("musicians");
+  const roles = t.raw("roles") as string[];
   return (
     <section id="musicians" className="bg-black py-20">
       <div className="container-x">
         <h2 className="mx-auto max-w-3xl text-center font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">
-          Trusted by professional musicians and dancers.{" "}
-          <span className="text-gradient">Loved by thousands</span> around the
-          world.
+          {t("title")} <span className="text-gradient">{t("titleAccent")}</span>{" "}
+          {t("titleAfter")}
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -19,20 +21,20 @@ export function Musicians() {
             >
               <Image
                 src={m.image}
-                alt={`${m.role} — ${m.name}`}
+                alt={`${roles[i]} — ${m.name}`}
                 width={1280}
                 height={720}
                 className="h-auto w-full"
               />
               <div className="p-5">
                 <p className="font-heading text-sm font-semibold uppercase tracking-wide text-[#ff914d]">
-                  {m.role}
+                  {roles[i]}
                 </p>
                 <h3 className="mt-1 font-heading text-xl font-bold text-white">
                   {m.name}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/55">
-                  {m.text}
+                  {t("text")}
                 </p>
               </div>
             </article>
