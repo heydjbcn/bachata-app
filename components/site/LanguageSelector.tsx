@@ -36,20 +36,41 @@ export function LanguageSelector({ className = "" }: { className?: string }) {
   const t = useTranslations("header");
   const [mounted, setMounted] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [desktop, setDesktop] = React.useState(false);
+  const wrapRef = React.useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => setMounted(true), []);
+  React.useEffect(() => {
+    setMounted(true);
+    const mq = window.matchMedia("(min-width: 768px)");
+    const apply = () => setDesktop(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
 
+  // escape (ambos) + scroll lock (solo modal móvil)
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     if (open) {
       window.addEventListener("keydown", onKey);
-      document.body.style.overflow = "hidden";
+      if (!desktop) document.body.style.overflow = "hidden";
     }
     return () => {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, desktop]);
+
+  // click fuera (dropdown desktop)
+  React.useEffect(() => {
+    if (!open || !desktop) return;
+    const onDown = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node))
+        setOpen(false);
+    };
+    window.addEventListener("mousedown", onDown);
+    return () => window.removeEventListener("mousedown", onDown);
+  }, [open, desktop]);
 
   const current = languages.find((l) => l.code === locale) || languages[0];
 
@@ -69,66 +90,91 @@ export function LanguageSelector({ className = "" }: { className?: string }) {
   }
 
   return (
-    <>
+    <div ref={wrapRef} className={`relative inline-flex ${className}`}>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => setOpen((o) => !o)}
         aria-label={t("changeLanguage")}
-        className={`lg-glass flex size-9 items-center justify-center rounded-full ${className}`}
+        className="lg-glass flex size-9 items-center justify-center rounded-full"
       >
         <current.Flag className="h-4 w-5 rounded-sm shadow-sm" />
       </button>
 
+      {/* DESKTOP: dropdown compacto */}
+      {open && desktop && (
+        <div className="absolute right-0 top-full z-50 mt-2 w-48 origin-top-right rounded-2xl border border-white/10 bg-black/85 p-1.5 shadow-2xl backdrop-blur-xl">
+          {languages.map((lang) => {
+            const active = lang.code === locale;
+            return (
+              <button
+                key={lang.code}
+                type="button"
+                onClick={() => change(lang.code)}
+                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors ${
+                  active
+                    ? "bg-[#ff914d]/12 text-[#ff914d]"
+                    : "text-white/85 hover:bg-white/[0.06]"
+                }`}
+              >
+                <lang.Flag className="h-4 w-6 shrink-0 rounded-sm shadow-sm" />
+                <span>{lang.name}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* MÓVIL: overlay grande */}
       {open &&
+        !desktop &&
         createPortal(
           <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/70 p-4 backdrop-blur-md"
             onClick={() => setOpen(false)}
             role="dialog"
             aria-modal="true"
           >
-          <div
-            className="w-full max-w-md rounded-3xl border border-white/10 bg-black/70 p-5 shadow-2xl backdrop-blur-xl sm:p-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-white">
-                {t("changeLanguage")}
-              </h2>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label="Close"
-                className="lg-glass flex size-9 items-center justify-center rounded-full text-white/70 hover:text-white"
-              >
-                <X className="size-5" />
-              </button>
+            <div
+              className="w-full max-w-md rounded-3xl border border-white/10 bg-black/70 p-5 shadow-2xl backdrop-blur-xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-white">
+                  {t("changeLanguage")}
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close"
+                  className="lg-glass flex size-9 items-center justify-center rounded-full text-white/70 hover:text-white"
+                >
+                  <X className="size-5" />
+                </button>
+              </div>
+              <div className="grid grid-cols-2 gap-2.5">
+                {languages.map((lang) => {
+                  const active = lang.code === locale;
+                  return (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      onClick={() => change(lang.code)}
+                      className={`flex items-center gap-3 rounded-2xl px-4 py-3.5 text-left ${
+                        active
+                          ? "border border-[#ff914d]/50 bg-[#ff914d]/15 text-white shadow-[0_8px_24px_-10px_rgba(255,145,77,0.7)]"
+                          : "lg-glass text-white/85"
+                      }`}
+                    >
+                      <lang.Flag className="h-5 w-7 shrink-0 rounded-sm shadow-sm" />
+                      <span className="text-base font-medium">{lang.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-
-            <div className="grid grid-cols-2 gap-2.5">
-              {languages.map((lang) => {
-                const active = lang.code === locale;
-                return (
-                  <button
-                    key={lang.code}
-                    type="button"
-                    onClick={() => change(lang.code)}
-                    className={`flex items-center gap-3 rounded-2xl px-4 py-3.5 text-left ${
-                      active
-                        ? "border border-[#ff914d]/50 bg-[#ff914d]/15 text-white shadow-[0_8px_24px_-10px_rgba(255,145,77,0.7)]"
-                        : "lg-glass text-white/85"
-                    }`}
-                  >
-                    <lang.Flag className="h-5 w-7 shrink-0 rounded-sm shadow-sm" />
-                    <span className="text-base font-medium">{lang.name}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>,
+          </div>,
           document.body,
         )}
-    </>
+    </div>
   );
 }

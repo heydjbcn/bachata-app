@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { StoreBadges } from "@/components/site/StoreBadges";
+import { HeroVideoModal } from "@/components/site/HeroVideoModal";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -81,6 +82,12 @@ export function Hero() {
           >
             <source src="/assets/hero-loop.mp4" type="video/mp4" />
           </video>
+
+          {/* play en el centro del aro → abre el vídeo grande */}
+          <HeroVideoModal
+            youtubeId="2OMBnbpg2fc"
+            className="absolute left-[31%] top-[44%] z-20 size-14 -translate-x-1/2 -translate-y-1/2 sm:size-16"
+          />
         </div>
       </div>
     </section>
