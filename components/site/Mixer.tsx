@@ -137,9 +137,11 @@ export function Mixer() {
     apply: (v: number) => void,
   ) => {
     cancelAnim(key);
-    const dur = 550;
+    const dur = 1300;
     const t0 = performance.now();
-    const ease = (p: number) => 1 - Math.pow(1 - p, 3);
+    // easeInOutCubic: arranca y termina suave para que se vea la progresión
+    const ease = (p: number) =>
+      p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
     const step = (now: number) => {
       const p = Math.min(1, (now - t0) / dur);
       apply(Math.round(from + (to - from) * ease(p)));
