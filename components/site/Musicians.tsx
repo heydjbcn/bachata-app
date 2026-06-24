@@ -52,7 +52,7 @@ export function Musicians() {
                 />
                 {/* play glassmorfismo */}
                 <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex size-16 items-center justify-center rounded-full border border-white/40 bg-white/15 shadow-lg backdrop-blur-md transition-transform duration-200 group-hover:scale-110 group-hover:bg-white/25">
+                  <span className="lg-glass flex size-16 items-center justify-center rounded-full transition-transform duration-200 group-hover:scale-110">
                     <Play className="size-7 translate-x-0.5 fill-white text-white" />
                   </span>
                 </span>

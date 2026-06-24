@@ -209,6 +209,54 @@
   animation-direction: reverse;
 }
 
+/* ---- Liquid Glass (botones) ---- */
+.lg-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.04)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.25),
+    0 8px 24px -10px rgba(255, 145, 77, 0.4);
+  transition:
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.2s ease;
+}
+.lg-glass:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.06)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 10px 30px -8px rgba(255, 145, 77, 0.6);
+}
+
+/* Variante naranja para CTAs primarios */
+.lg-orange {
+  background: linear-gradient(180deg, #ffa869, #ff7c3e);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -2px 7px rgba(170, 64, 16, 0.35),
+    0 10px 28px -8px rgba(255, 145, 77, 0.65);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+.lg-orange:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 14px 38px -8px rgba(255, 145, 77, 0.9);
+}
+
 /* slider del mixer (input range) */
 .mixer-range {
   -webkit-appearance: none;

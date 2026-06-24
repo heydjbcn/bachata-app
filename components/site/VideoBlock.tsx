@@ -44,8 +44,8 @@ export function VideoBlock() {
               aria-label={t("play")}
               className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/30"
             >
-              <span className="flex size-20 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform group-hover:scale-110">
-                <Play className="size-9 translate-x-0.5 fill-black text-black" />
+              <span className="lg-glass flex size-20 items-center justify-center rounded-full transition-transform group-hover:scale-110">
+                <Play className="size-9 translate-x-0.5 fill-white text-white" />
               </span>
             </button>
           )}

@@ -264,7 +264,7 @@ export function Mixer() {
               type="button"
               onClick={togglePlay}
               aria-label={playing ? tr("pause") : tr("play")}
-              className="flex size-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#ff914d] to-[#ff7a3d] text-black shadow-[0_10px_30px_-10px_rgba(255,145,77,0.8)] transition-transform hover:scale-105"
+              className="lg-orange flex size-14 shrink-0 items-center justify-center rounded-full text-black hover:scale-105"
             >
               {loading ? (
                 <Loader2 className="size-6 animate-spin" />

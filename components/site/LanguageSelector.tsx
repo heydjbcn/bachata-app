@@ -74,7 +74,7 @@ export function LanguageSelector({ className = "" }: { className?: string }) {
         type="button"
         onClick={() => setOpen(true)}
         aria-label={t("changeLanguage")}
-        className={`flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] backdrop-blur transition-colors hover:bg-white/10 ${className}`}
+        className={`lg-glass flex size-9 items-center justify-center rounded-full ${className}`}
       >
         <current.Flag className="h-4 w-5 rounded-sm shadow-sm" />
       </button>
@@ -99,7 +99,7 @@ export function LanguageSelector({ className = "" }: { className?: string }) {
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                className="lg-glass flex size-9 items-center justify-center rounded-full text-white/70 hover:text-white"
               >
                 <X className="size-5" />
               </button>
@@ -113,10 +113,10 @@ export function LanguageSelector({ className = "" }: { className?: string }) {
                     key={lang.code}
                     type="button"
                     onClick={() => change(lang.code)}
-                    className={`flex items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition-colors ${
+                    className={`flex items-center gap-3 rounded-2xl px-4 py-3.5 text-left ${
                       active
-                        ? "border-[#ff914d]/50 bg-[#ff914d]/10 text-white"
-                        : "border-white/10 bg-white/[0.03] text-white/85 hover:bg-white/[0.08]"
+                        ? "border border-[#ff914d]/50 bg-[#ff914d]/15 text-white shadow-[0_8px_24px_-10px_rgba(255,145,77,0.7)]"
+                        : "lg-glass text-white/85"
                     }`}
                   >
                     <lang.Flag className="h-5 w-7 shrink-0 rounded-sm shadow-sm" />

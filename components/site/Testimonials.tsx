@@ -25,7 +25,10 @@ function Row({ items, reverse }: { items: Item[]; reverse?: boolean }) {
   const seq = [...items, ...items];
   return (
     <div className="flex overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-      <div className={`marquee-track ${reverse ? "reverse" : ""}`}>
+      <div
+        className={`marquee-track ${reverse ? "reverse" : ""}`}
+        style={{ animationDuration: "80s" }}
+      >
         {[0, 1].map((dup) => (
           <div key={dup} className="flex">
             {seq.map((item, i) => (
