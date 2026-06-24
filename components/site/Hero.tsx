@@ -7,13 +7,8 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="dot-grid relative overflow-hidden bg-black pt-[72px]"
+      className="relative overflow-hidden bg-black pt-[72px]"
     >
-      {/* glow ambiental */}
-      <div
-        className="pointer-events-none absolute right-[-10%] top-[-5%] h-[700px] w-[700px] glow-orange"
-        aria-hidden
-      />
       <div className="container-x relative grid items-center gap-12 pb-20 pt-12 lg:grid-cols-2 lg:pb-28 lg:pt-20">
         {/* izquierda */}
         <div>
