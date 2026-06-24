@@ -8,11 +8,11 @@ export const STORE_LINKS = {
 };
 
 export const NAV = [
-  { label: "Features", href: "#features" },
-  { label: "Mixer", href: "#mixer" },
-  { label: "Musicians", href: "#musicians" },
-  { label: "Reviews", href: "#testimonials" },
-];
+  { key: "features", href: "#features" },
+  { key: "mixer", href: "#mixer" },
+  { key: "musicians", href: "#musicians" },
+  { key: "reviews", href: "#testimonials" },
+] as const;
 
 export const HERO_STATS = [
   { value: "8+", label: "Bachata styles" },
