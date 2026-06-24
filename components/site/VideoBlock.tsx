@@ -23,7 +23,7 @@ export function VideoBlock() {
           {t("title")}
         </h2>
 
-        <div className="group relative mx-auto mt-12 aspect-[16/10] max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-black">
+        <div className="group relative mx-auto mt-12 aspect-[9/16] w-full max-w-[360px] overflow-hidden rounded-3xl border border-white/10 bg-black">
           <video
             ref={videoRef}
             className="size-full object-cover object-center"

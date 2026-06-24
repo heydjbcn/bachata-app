@@ -50,9 +50,9 @@ export function FeatureGrid() {
                 <Image
                   src="/assets/Logo-Bachatappstudio.png"
                   alt="BachatAppStudio"
-                  width={160}
-                  height={43}
-                  className="h-6 w-auto opacity-80"
+                  width={200}
+                  height={53}
+                  className="h-9 w-auto opacity-90"
                 />
               </div>
             </article>

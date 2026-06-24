@@ -256,7 +256,7 @@ export function Mixer() {
         className="pointer-events-none absolute inset-x-10 bottom-0 h-32 glow-orange blur-2xl"
         aria-hidden
       />
-      <div className="card-dark relative rounded-3xl p-5 sm:p-8">
+      <div className="lg-panel relative rounded-3xl p-5 sm:p-8">
         {/* cabecera */}
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -333,7 +333,7 @@ export function Mixer() {
           {MIXER_STEMS.map((stem, i) => (
             <div
               key={stem.file}
-              className="rounded-2xl border border-white/8 bg-white/[0.02] p-4"
+              className="lg-card rounded-2xl p-4"
             >
               <div className="flex items-center justify-between">
                 <span className="font-heading text-base font-semibold tracking-wide text-white">
@@ -373,7 +373,7 @@ export function Mixer() {
         </div>
 
         {/* speed */}
-        <div className="mt-4 flex flex-col gap-4 rounded-2xl border border-white/8 bg-white/[0.02] p-5 sm:flex-row sm:items-center">
+        <div className="lg-card mt-4 flex flex-col gap-4 rounded-2xl p-5 sm:flex-row sm:items-center">
           <div className="flex items-center gap-2 sm:w-32">
             <Timer className="size-5 text-[#ff914d]" />
             <span className="font-heading text-base font-semibold uppercase tracking-wide text-white">

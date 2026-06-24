@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { StoreBadges } from "@/components/site/StoreBadges";
 
 export function CtaBand({
@@ -11,6 +12,7 @@ export function CtaBand({
   subtitle: string;
   badges?: boolean;
 }) {
+  const t = useTranslations("header");
   return (
     <section id={id} className="peach-band py-16 text-center text-[#1a1208]">
       <div className="container-x flex flex-col items-center">
@@ -20,7 +22,16 @@ export function CtaBand({
         <p className="mt-4 font-heading text-base font-bold uppercase tracking-wide text-[#c2540a]">
           {subtitle}
         </p>
-        {badges && <StoreBadges className="mt-7 justify-center" />}
+        {badges ? (
+          <StoreBadges className="mt-7 justify-center" />
+        ) : (
+          <a
+            href="#download"
+            className="lg-orange mt-7 rounded-full px-7 py-3 text-base font-semibold text-black hover:scale-[1.03]"
+          >
+            {t("getApp")}
+          </a>
+        )}
       </div>
     </section>
   );
