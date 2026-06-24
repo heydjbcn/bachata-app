@@ -42,3 +42,6 @@ next-env.d.ts
 
 # deploy bundle (standalone)
 /deploy
+
+# copia local completa del WP (backup, no al repo)
+/_wp-copy

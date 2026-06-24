@@ -1,7 +1,19 @@
-import Image from "next/image";
+"use client";
+
+import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 
 export function VideoBlock() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const play = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play();
+    setPlaying(true);
+  };
+
   return (
     <section className="bg-black py-20">
       <div className="container-x">
@@ -9,22 +21,32 @@ export function VideoBlock() {
           Professional tools accessible to every teacher and student.
         </h2>
 
-        <div className="group relative mx-auto mt-12 aspect-[16/10] max-w-4xl overflow-hidden rounded-3xl border border-white/10">
-          <Image
-            src="/assets/TEASER-CON-LOGO-BUENO-mp4-image.jpg"
-            alt="It all started with a question — BachatAppStudio"
-            fill
-            sizes="(max-width: 896px) 100vw, 896px"
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/30" />
-          <button
-            type="button"
-            aria-label="Play video"
-            className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform group-hover:scale-110"
+        <div className="group relative mx-auto mt-12 aspect-[16/10] max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-black">
+          <video
+            ref={videoRef}
+            className="size-full object-cover object-center"
+            poster="/assets/TEASER-CON-LOGO-BUENO-mp4-image.jpg"
+            controls={playing}
+            playsInline
+            preload="metadata"
+            onPause={() => setPlaying(false)}
+            onEnded={() => setPlaying(false)}
           >
-            <Play className="size-9 translate-x-0.5 fill-black text-black" />
-          </button>
+            <source src="/assets/TEASER-CON-LOGO-BUENO.mp4" type="video/mp4" />
+          </video>
+
+          {!playing && (
+            <button
+              type="button"
+              onClick={play}
+              aria-label="Play video"
+              className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/30"
+            >
+              <span className="flex size-20 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform group-hover:scale-110">
+                <Play className="size-9 translate-x-0.5 fill-black text-black" />
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </section>

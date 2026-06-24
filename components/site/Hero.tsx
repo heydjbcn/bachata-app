@@ -65,12 +65,6 @@ export function Hero() {
             className="absolute inset-0 rounded-full border border-dashed border-[#ff914d]/40"
             aria-hidden
           />
-          <span
-            className="absolute left-[2%] top-1/2 -translate-y-1/2 -rotate-90 font-heading text-2xl font-semibold italic text-[#ff914d]"
-            aria-hidden
-          >
-            Teach &amp; learn easy
-          </span>
 
           <Image
             src="/assets/Post-De-Instagram-Mockup-De-Telefono-Con-Promocion-Para-Negocios-Moderno-Negro-Y-Rojo.webp"
