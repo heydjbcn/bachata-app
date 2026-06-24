@@ -42,16 +42,18 @@ export function Hero() {
           <StoreBadges className="mt-8" />
 
           {/* stats */}
-          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
+          <div className="mt-10 grid max-w-xl grid-cols-3">
             {stats.map((s, i) => (
               <div
                 key={i}
-                className={i > 0 ? "border-l border-white/10 pl-10" : ""}
+                className={i > 0 ? "border-l border-white/10 pl-4 sm:pl-6" : ""}
               >
-                <p className="font-heading text-3xl font-bold text-white">
+                <p className="font-heading text-2xl font-bold text-white sm:text-3xl">
                   {s.value}
                 </p>
-                <p className="mt-1 text-sm text-white/50">{s.label}</p>
+                <p className="mt-1 text-xs leading-snug text-white/50 sm:text-sm">
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
