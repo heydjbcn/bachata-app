@@ -53,6 +53,14 @@ export function Mixer() {
         .webkitAudioContext)();
     ctxRef.current = ctx;
     srRef.current = ctx.sampleRate;
+    // desbloqueo iOS: reproducir un buffer silencioso dentro del gesto
+    try {
+      const b = ctx.createBuffer(1, 1, ctx.sampleRate);
+      const s = ctx.createBufferSource();
+      s.buffer = b;
+      s.connect(ctx.destination);
+      s.start(0);
+    } catch {}
     const node = ctx.createScriptProcessor(BUFFER_SIZE, 0, 2);
     const tmp = new Float32Array(BUFFER_SIZE * 2);
     node.onaudioprocess = (e: AudioProcessingEvent) => {
@@ -126,7 +134,7 @@ export function Mixer() {
       return;
     }
     initCtx();
-    void ctxRef.current!.resume();
+    void ctxRef.current!.resume(); // dentro del gesto (iOS)
     if (!ready) {
       setLoading(true);
       try {
@@ -138,6 +146,10 @@ export function Mixer() {
       }
       setLoading(false);
     }
+    // re-asegurar que el contexto está activo tras la carga (iOS lo suspende)
+    try {
+      await ctxRef.current!.resume();
+    } catch {}
     // reiniciar si estaba al final
     if (currentPos() >= duration - 0.1) seekTo(0);
     endedRef.current = false;
