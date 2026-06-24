@@ -62,7 +62,6 @@
     "titleAccent": "professional bachata musicians.",
     "description": "No more switching between apps or wasting time looking for ways to improve your classes. Explore, adapt, and master bachata with tools designed to let your creativity flow without limits.",
     "learnMore": "Learn more",
-    "body": "Adjust the volume of each instrument individually, highlighting the one you need during your classes.",
     "items": [
       "Control the speed of any track to practice without frustration.",
       "Learn to dance in different timings with clarity and precision.",
@@ -72,6 +71,16 @@
       "Master syncopation to add dynamism and surprise to your dancing.",
       "Dive into the essence of merengue — learn it and bring it to your classes.",
       "Save your favorite tracks and exercises all in one place."
+    ],
+    "bodies": [
+      "Perfect for beginners and advanced dancers who want to refine details at their own pace. Slow down to understand, speed up to challenge yourself and grow with confidence. Your progress, your rhythm—without losing the essence of the music.",
+      "Train your ear to recognize rhythmic variations and adapt effortlessly. Explore how the energy of the dance shifts with the tempo. A key tool to master every musical timing like never before.",
+      "Discover the roots, structures, and nuances of each variation. Learn how each style is danced with guided musical examples. Perfect for those seeking both depth and technique at once.",
+      "Switch rhythms, percussion, and variations to create your own version in real time with no delays. Explore musicality like never before with this powerful tool. Turn your ear into your best guide for improvisation and flow.",
+      "Train your sensitivity to play with the accents of the requinto and the base. Learn to anticipate, respond, and shine musically while dancing. Connect body and music in a natural and exciting way.",
+      "Create amazing routines and adapt the count to your custom footwork. Enhance your musical expression by playing with syncopated patterns and developing your interpretation. Make your dance more dynamic, fun, and musically rich.",
+      "Discover every type of merengue and its unique nuances, play with each instrument in real time, and create an immersive experience during practice, understanding and enjoying the world's happiest genre. Perfect for enriching your dancing with history, flavor, and roots. Feel the rhythm of merengue... and make it a part of you.",
+      "Enjoy all your music and adjust the speed without distortion or loss of quality. Organize your practice sessions and access your content anytime. Your dance evolution deserves a complete experience—and BachatApp Studio takes care of it."
     ]
   },
   "appHeadline": {

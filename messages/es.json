@@ -19,16 +19,32 @@
     "titleAccent": "forma fácil.",
     "subtitle": "Juega con instrumentos, ritmos, sincopados, velocidades y tiempos — llevando tu conocimiento y el de tus alumnos al siguiente nivel. La experiencia de práctica inmersiva definitiva, impulsada por los mejores instructores y músicos del género.",
     "stats": [
-      { "value": "8+", "label": "Estilos de bachata" },
-      { "value": "9", "label": "Stems de instrumentos reales" },
-      { "value": "50-150%", "label": "Control de velocidad" }
+      {
+        "value": "8+",
+        "label": "Estilos de bachata"
+      },
+      {
+        "value": "9",
+        "label": "Stems de instrumentos reales"
+      },
+      {
+        "value": "50-150%",
+        "label": "Control de velocidad"
+      }
     ],
     "chipSpeed": "Velocidad",
     "chipLiveStems": "Stems en vivo",
     "chipTracks": "9 pistas"
   },
   "marquee": {
-    "words": ["INNOVA", "INSPIRA", "LIDERA", "ENSEÑA", "APRENDE", "BAILA"]
+    "words": [
+      "INNOVA",
+      "INSPIRA",
+      "LIDERA",
+      "ENSEÑA",
+      "APRENDE",
+      "BAILA"
+    ]
   },
   "mixer": {
     "eyebrow": "Innova · Inspira · Lidera",
@@ -48,13 +64,24 @@
     "seek": "Buscar",
     "resetTo100": "Volver al 100%",
     "resetSpeed": "Restablecer velocidad al 100%",
-    "stems": ["Bajo", "Guitarra", "Piano", "Percusión", "Voces", "Otros"]
+    "stems": [
+      "Bajo",
+      "Guitarra",
+      "Piano",
+      "Percusión",
+      "Voces",
+      "Otros"
+    ]
   },
   "featureSplit": {
     "eyebrow": "Domina la bachata y el merengue con herramientas inteligentes",
     "title": "Ajusta el BPM, separa los stems y crea algo único.",
     "text": "Enseña y aprende con precisión y profesionalidad, respaldado por los mejores bailarines y músicos de bachata del mundo.",
-    "chips": ["Aísla cualquier instrumento", "Músicos reales", "Sonido de estudio"]
+    "chips": [
+      "Aísla cualquier instrumento",
+      "Músicos reales",
+      "Sonido de estudio"
+    ]
   },
   "features": {
     "eyebrow": "Impulsado por la innovación",
@@ -62,7 +89,6 @@
     "titleAccent": "músicos profesionales de bachata.",
     "description": "Se acabó cambiar de app o perder el tiempo buscando formas de mejorar tus clases. Explora, adapta y domina la bachata con herramientas diseñadas para que tu creatividad fluya sin límites.",
     "learnMore": "Saber más",
-    "body": "Ajusta el volumen de cada instrumento individualmente, resaltando el que necesites durante tus clases.",
     "items": [
       "Controla la velocidad de cualquier pista para practicar sin frustración.",
       "Aprende a bailar en distintos tiempos con claridad y precisión.",
@@ -72,6 +98,16 @@
       "Domina el sincopado para añadir dinamismo y sorpresa a tu baile.",
       "Sumérgete en la esencia del merengue — apréndelo y llévalo a tus clases.",
       "Guarda tus pistas y ejercicios favoritos en un solo lugar."
+    ],
+    "bodies": [
+      "Perfecto tanto para principiantes como para bailarines avanzados que quieren pulir los detalles a su propio ritmo. Reduce la velocidad para entender, súbela para retarte y crece con confianza. Tu progreso, tu ritmo, sin perder la esencia de la música.",
+      "Entrena tu oído para reconocer las variaciones rítmicas y adaptarte sin esfuerzo. Descubre cómo cambia la energía del baile con el tempo. Una herramienta clave para dominar cada tiempo musical como nunca antes.",
+      "Descubre las raíces, las estructuras y los matices de cada variación. Aprende cómo se baila cada estilo con ejemplos musicales guiados. Perfecto para quienes buscan profundidad y técnica a la vez.",
+      "Cambia ritmos, percusión y variaciones para crear tu propia versión en tiempo real y sin retardos. Explora la musicalidad como nunca antes con esta potente herramienta. Convierte tu oído en tu mejor guía para improvisar y fluir.",
+      "Entrena tu sensibilidad para jugar con los acentos del requinto y la base. Aprende a anticipar, responder y brillar musicalmente mientras bailas. Conecta cuerpo y música de una forma natural y emocionante.",
+      "Crea rutinas increíbles y adapta el conteo a tus footworks personalizados. Potencia tu expresión musical jugando con patrones sincopados y desarrollando tu interpretación. Haz que tu baile sea más dinámico, divertido y musicalmente rico.",
+      "Descubre cada tipo de merengue y sus matices únicos, juega con cada instrumento en tiempo real y crea una experiencia inmersiva durante la práctica, comprendiendo y disfrutando del género más alegre del mundo. Perfecto para enriquecer tu baile con historia, sabor y raíces. Siente el ritmo del merengue... y hazlo parte de ti.",
+      "Disfruta de toda tu música y ajusta la velocidad sin distorsión ni pérdida de calidad. Organiza tus sesiones de práctica y accede a tu contenido cuando quieras. Tu evolución como bailarín merece una experiencia completa, y BachatApp Studio se encarga de ello."
     ]
   },
   "appHeadline": {
@@ -110,7 +146,11 @@
     "titleAccent": "Amada por miles",
     "titleAfter": "en todo el mundo.",
     "text": "Juega con instrumentos, ritmos, tiempos, sincopados, velocidades y compases.",
-    "roles": ["Guitarra principal", "Bajista", "Saxofonista"]
+    "roles": [
+      "Guitarra principal",
+      "Bajista",
+      "Saxofonista"
+    ]
   },
   "testimonials": {
     "title": "Descubre por qué miles de profes y alumnos de bachata",
@@ -128,8 +168,14 @@
       "El diseño es intuitivo, práctico y elegante. Me encanta cómo va de lo básico a lo avanzado — los instrumentos reales marcan la diferencia."
     ],
     "places": [
-      "España", "Colombia", "Francia", "República Dominicana",
-      "Brasil", "Alemania", "Argentina", "México"
+      "España",
+      "Colombia",
+      "Francia",
+      "República Dominicana",
+      "Brasil",
+      "Alemania",
+      "Argentina",
+      "México"
     ]
   },
   "video": {

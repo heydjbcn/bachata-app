@@ -19,16 +19,32 @@
     "titleAccent": "ganz leicht.",
     "subtitle": "Spiele mit Instrumenten, Rhythmen, Synkopen, Geschwindigkeiten und Zählzeiten — und bringe dein Wissen und das deiner Schüler auf die nächste Stufe. Das ultimative immersive Übungserlebnis, getragen von den besten Lehrern und Musikern des Genres.",
     "stats": [
-      { "value": "8+", "label": "Bachata-Stile" },
-      { "value": "9", "label": "Echte Instrument-Stems" },
-      { "value": "50-150%", "label": "Geschwindigkeitsregelung" }
+      {
+        "value": "8+",
+        "label": "Bachata-Stile"
+      },
+      {
+        "value": "9",
+        "label": "Echte Instrument-Stems"
+      },
+      {
+        "value": "50-150%",
+        "label": "Geschwindigkeitsregelung"
+      }
     ],
     "chipSpeed": "Geschwindigkeit",
     "chipLiveStems": "Live-Stems",
     "chipTracks": "9 Spuren"
   },
   "marquee": {
-    "words": ["INNOVIEREN", "INSPIRIEREN", "FÜHREN", "LEHREN", "LERNEN", "TANZEN"]
+    "words": [
+      "INNOVIEREN",
+      "INSPIRIEREN",
+      "FÜHREN",
+      "LEHREN",
+      "LERNEN",
+      "TANZEN"
+    ]
   },
   "mixer": {
     "eyebrow": "Innovieren · Inspirieren · Führen",
@@ -48,13 +64,24 @@
     "seek": "Suchen",
     "resetTo100": "Auf 100% zurücksetzen",
     "resetSpeed": "Geschwindigkeit auf 100% zurücksetzen",
-    "stems": ["Bass", "Gitarre", "Klavier", "Schlagzeug", "Gesang", "Sonstiges"]
+    "stems": [
+      "Bass",
+      "Gitarre",
+      "Klavier",
+      "Schlagzeug",
+      "Gesang",
+      "Sonstiges"
+    ]
   },
   "featureSplit": {
     "eyebrow": "Meistere Bachata & Merengue mit smarten Werkzeugen",
     "title": "Passe das BPM an, trenne Stems und erschaffe etwas Einzigartiges.",
     "text": "Unterrichte und lerne mit Präzision und Professionalität, unterstützt von den weltbesten Bachata-Tänzern und -Musikern.",
-    "chips": ["Isoliere jedes Instrument", "Echte Musiker", "Sound in Studioqualität"]
+    "chips": [
+      "Isoliere jedes Instrument",
+      "Echte Musiker",
+      "Sound in Studioqualität"
+    ]
   },
   "features": {
     "eyebrow": "Angetrieben von Innovation",
@@ -62,7 +89,6 @@
     "titleAccent": "professionellen Bachata-Musikern.",
     "description": "Schluss mit dem ständigen Wechseln zwischen Apps oder dem Zeitverlust auf der Suche nach Wegen, deine Klassen zu verbessern. Entdecke, passe an und meistere Bachata mit Werkzeugen, die deine Kreativität grenzenlos fließen lassen.",
     "learnMore": "Mehr erfahren",
-    "body": "Passe die Lautstärke jedes Instruments einzeln an und hebe das hervor, das du in deinen Klassen brauchst.",
     "items": [
       "Steuere die Geschwindigkeit jeder Spur, um ohne Frust zu üben.",
       "Lerne, in verschiedenen Zählzeiten zu tanzen — klar und präzise.",
@@ -72,6 +98,16 @@
       "Meistere die Synkopierung, um deinem Tanz Dynamik und Überraschung zu verleihen.",
       "Tauche ein in das Wesen des Merengue — lerne ihn und bringe ihn in deine Klassen.",
       "Speichere deine Lieblings-Tracks und -Übungen an einem einzigen Ort."
+    ],
+    "bodies": [
+      "Perfekt für Anfänger und Fortgeschrittene, die Details in ihrem eigenen Tempo verfeinern möchten. Verlangsame, um zu verstehen, beschleunige, um dich zu fordern und selbstbewusst zu wachsen. Dein Fortschritt, dein Rhythmus – ohne die Essenz der Musik zu verlieren.",
+      "Trainiere dein Gehör, um rhythmische Variationen zu erkennen und dich mühelos anzupassen. Entdecke, wie sich die Energie des Tanzes mit dem Tempo verändert. Ein unverzichtbares Werkzeug, um jedes musikalische Timing wie nie zuvor zu meistern.",
+      "Entdecke die Wurzeln, Strukturen und Feinheiten jeder Variation. Lerne anhand geführter musikalischer Beispiele, wie jeder Stil getanzt wird. Perfekt für alle, die Tiefe und Technik zugleich suchen.",
+      "Wechsle Rhythmen, Percussion und Variationen, um in Echtzeit und ganz ohne Verzögerung deine eigene Version zu kreieren. Erkunde Musikalität wie nie zuvor mit diesem leistungsstarken Werkzeug. Mach dein Gehör zum besten Wegweiser für Improvisation und Flow.",
+      "Trainiere dein Feingefühl, um mit den Akzenten von Requinto und Basslinie zu spielen. Lerne, beim Tanzen musikalisch zu antizipieren, zu reagieren und zu glänzen. Verbinde Körper und Musik auf natürliche und mitreißende Weise.",
+      "Kreiere beeindruckende Choreografien und passe die Zählung an deine eigenen Footwork-Schritte an. Bereichere deinen musikalischen Ausdruck, indem du mit synkopierten Mustern spielst und deine Interpretation entwickelst. Mach deinen Tanz dynamischer, unterhaltsamer und musikalisch reicher.",
+      "Entdecke jede Art von Merengue und ihre einzigartigen Nuancen, spiele in Echtzeit mit jedem Instrument und schaffe ein immersives Erlebnis beim Üben – verstehe und genieße das fröhlichste Genre der Welt. Perfekt, um deinen Tanz mit Geschichte, Geschmack und Wurzeln zu bereichern. Spüre den Rhythmus des Merengue … und mach ihn zu einem Teil von dir.",
+      "Genieße deine gesamte Musik und passe die Geschwindigkeit ohne Verzerrung oder Qualitätsverlust an. Organisiere deine Übungseinheiten und greife jederzeit auf deine Inhalte zu. Deine tänzerische Entwicklung verdient ein rundum vollständiges Erlebnis – und BachatApp Studio sorgt genau dafür."
     ]
   },
   "appHeadline": {
@@ -110,7 +146,11 @@
     "titleAccent": "Von Tausenden geliebt",
     "titleAfter": "auf der ganzen Welt.",
     "text": "Spiele mit Instrumenten, Rhythmen, Timing, Synkopen, Geschwindigkeiten und Zählzeiten.",
-    "roles": ["Leadgitarre", "Bassist", "Saxofonist"]
+    "roles": [
+      "Leadgitarre",
+      "Bassist",
+      "Saxofonist"
+    ]
   },
   "testimonials": {
     "title": "Entdecke, warum Tausende Bachata-Lehrer und -Schüler",
@@ -128,8 +168,14 @@
       "Das Design ist intuitiv, praktisch und elegant. Ich liebe, wie es von den Grundlagen bis ins Fortgeschrittene reicht — die echten Instrumente machen den ganzen Unterschied."
     ],
     "places": [
-      "Spanien", "Kolumbien", "Frankreich", "Dominikanische Republik",
-      "Brasilien", "Deutschland", "Argentinien", "Mexiko"
+      "Spanien",
+      "Kolumbien",
+      "Frankreich",
+      "Dominikanische Republik",
+      "Brasilien",
+      "Deutschland",
+      "Argentinien",
+      "Mexiko"
     ]
   },
   "video": {

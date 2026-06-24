@@ -12,11 +12,10 @@ export function Hero() {
       {/* fondo moderno: glow naranja muy suave + rejilla de puntos, ambos
           desvanecidos antes del vídeo para que no reaparezca el rectángulo */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        {/* glow grande y difuso */}
-        <div className="absolute left-[-10%] top-[-22%] h-[820px] w-[820px] rounded-full bg-[radial-gradient(circle,rgba(255,145,77,0.30),transparent_60%)]" />
-        {/* núcleo más vivo */}
-        <div className="absolute left-[2%] top-[-8%] h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,138,60,0.28),transparent_58%)] blur-[10px]" />
-        <div className="absolute inset-0 dot-grid [mask-image:linear-gradient(to_right,#000,#000_30%,transparent_54%)]" />
+        {/* glow naranja a la derecha: grande y muy transparente */}
+        <div className="absolute right-[-14%] top-[-28%] h-[1100px] w-[1100px] rounded-full bg-[radial-gradient(circle,rgba(255,145,77,0.14),transparent_60%)]" />
+        {/* rejilla de puntos sutil (se desvanece hacia la derecha) */}
+        <div className="absolute inset-0 dot-grid [mask-image:linear-gradient(to_right,#000,#000_35%,transparent_60%)]" />
       </div>
       <div className="container-x relative grid items-center gap-12 pb-20 pt-12 lg:grid-cols-2 lg:pb-28 lg:pt-20">
         {/* izquierda */}
@@ -58,7 +57,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* derecha: vídeo en loop (composición original de la web) */}
+        {/* derecha: vídeo en loop (composición original de la web). Bordes
+            difuminados para fundirse con el fondo/glow (sin rectángulo). */}
         <div className="relative mx-auto w-full max-w-[480px]">
           <video
             className="w-full"
@@ -68,6 +68,14 @@ export function Hero() {
             playsInline
             preload="auto"
             aria-label="BachatAppStudio"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, #000 9%, #000 91%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent)",
+              WebkitMaskComposite: "source-in",
+              maskImage:
+                "linear-gradient(to right, transparent, #000 9%, #000 91%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent)",
+              maskComposite: "intersect",
+            }}
           >
             <source src="/assets/hero-loop.mp4" type="video/mp4" />
           </video>

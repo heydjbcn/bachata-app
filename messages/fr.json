@@ -19,16 +19,32 @@
     "titleAccent": "toute simplicité.",
     "subtitle": "Joue avec les instruments, les rythmes, les syncopes, les vitesses et les temps — en faisant passer ton savoir et celui de tes élèves au niveau supérieur. L'expérience de pratique immersive ultime, portée par les meilleurs instructeurs et musiciens du genre.",
     "stats": [
-      { "value": "8+", "label": "Styles de bachata" },
-      { "value": "9", "label": "Stems d'instruments réels" },
-      { "value": "50-150%", "label": "Contrôle de la vitesse" }
+      {
+        "value": "8+",
+        "label": "Styles de bachata"
+      },
+      {
+        "value": "9",
+        "label": "Stems d'instruments réels"
+      },
+      {
+        "value": "50-150%",
+        "label": "Contrôle de la vitesse"
+      }
     ],
     "chipSpeed": "Vitesse",
     "chipLiveStems": "Stems en direct",
     "chipTracks": "9 pistes"
   },
   "marquee": {
-    "words": ["INNOVER", "INSPIRER", "GUIDER", "ENSEIGNER", "APPRENDRE", "DANSER"]
+    "words": [
+      "INNOVER",
+      "INSPIRER",
+      "GUIDER",
+      "ENSEIGNER",
+      "APPRENDRE",
+      "DANSER"
+    ]
   },
   "mixer": {
     "eyebrow": "Innover · Inspirer · Guider",
@@ -48,13 +64,24 @@
     "seek": "Naviguer",
     "resetTo100": "Revenir à 100%",
     "resetSpeed": "Réinitialiser la vitesse à 100%",
-    "stems": ["Basse", "Guitare", "Piano", "Percussions", "Voix", "Autres"]
+    "stems": [
+      "Basse",
+      "Guitare",
+      "Piano",
+      "Percussions",
+      "Voix",
+      "Autres"
+    ]
   },
   "featureSplit": {
     "eyebrow": "Maîtrise la bachata et le merengue avec des outils intelligents",
     "title": "Ajuste le BPM, sépare les stems et crée quelque chose d'unique.",
     "text": "Enseigne et apprends avec précision et professionnalisme, soutenu par les meilleurs danseurs et musiciens de bachata du monde.",
-    "chips": ["Isole n'importe quel instrument", "Vrais musiciens", "Son de qualité studio"]
+    "chips": [
+      "Isole n'importe quel instrument",
+      "Vrais musiciens",
+      "Son de qualité studio"
+    ]
   },
   "features": {
     "eyebrow": "Porté par l'innovation",
@@ -62,7 +89,6 @@
     "titleAccent": "musiciens professionnels de bachata.",
     "description": "Fini de jongler entre les apps ou de perdre du temps à chercher comment améliorer tes cours. Explore, adapte et maîtrise la bachata avec des outils conçus pour laisser ta créativité s'exprimer sans limites.",
     "learnMore": "En savoir plus",
-    "body": "Ajuste le volume de chaque instrument individuellement, en mettant en avant celui dont tu as besoin pendant tes cours.",
     "items": [
       "Contrôle la vitesse de n'importe quelle piste pour pratiquer sans frustration.",
       "Apprends à danser sur différents temps avec clarté et précision.",
@@ -72,6 +98,16 @@
       "Maîtrise la syncope pour ajouter du dynamisme et de la surprise à ta danse.",
       "Plonge dans l'essence du merengue — apprends-le et apporte-le à tes cours.",
       "Enregistre tes pistes et exercices favoris au même endroit."
+    ],
+    "bodies": [
+      "Parfait pour les danseurs débutants comme avancés qui veulent peaufiner chaque détail à leur propre rythme. Ralentissez pour comprendre, accélérez pour vous dépasser et progresser en toute confiance. Votre progression, votre tempo — sans jamais perdre l'essence de la musique.",
+      "Entraînez votre oreille à reconnaître les variations rythmiques et adaptez-vous sans effort. Découvrez comment l'énergie de la danse évolue avec le tempo. Un outil essentiel pour maîtriser chaque temps musical comme jamais auparavant.",
+      "Découvrez les racines, les structures et les nuances de chaque variation. Apprenez comment chaque style se danse grâce à des exemples musicaux guidés. Idéal pour celles et ceux qui recherchent à la fois la profondeur et la technique.",
+      "Changez de rythmes, de percussions et de variations pour créer votre propre version en temps réel, sans aucun délai. Explorez la musicalité comme jamais auparavant avec cet outil puissant. Faites de votre oreille votre meilleur guide pour l'improvisation et la fluidité.",
+      "Aiguisez votre sensibilité pour jouer avec les accents du requinto et de la base. Apprenez à anticiper, répondre et briller musicalement tout en dansant. Connectez votre corps et la musique de façon naturelle et passionnante.",
+      "Créez des chorégraphies incroyables et adaptez le compte à vos jeux de pieds personnalisés. Enrichissez votre expression musicale en jouant avec les motifs syncopés et en développant votre interprétation. Rendez votre danse plus dynamique, plus ludique et musicalement plus riche.",
+      "Découvrez chaque type de merengue et ses nuances uniques, jouez avec chaque instrument en temps réel et vivez une expérience immersive pendant votre pratique, en comprenant et en savourant le genre le plus joyeux du monde. Parfait pour enrichir votre danse d'histoire, de saveur et de racines. Ressentez le rythme du merengue... et faites-en une partie de vous.",
+      "Profitez de toute votre musique et ajustez la vitesse sans distorsion ni perte de qualité. Organisez vos séances de pratique et accédez à votre contenu à tout moment. Votre évolution en danse mérite une expérience complète — et BachatApp Studio s'en charge."
     ]
   },
   "appHeadline": {
@@ -110,7 +146,11 @@
     "titleAccent": "Aimée par des milliers",
     "titleAfter": "de personnes dans le monde entier.",
     "text": "Joue avec les instruments, les rythmes, les temps, les syncopes, les vitesses et les mesures.",
-    "roles": ["Guitariste principal", "Bassiste", "Saxophoniste"]
+    "roles": [
+      "Guitariste principal",
+      "Bassiste",
+      "Saxophoniste"
+    ]
   },
   "testimonials": {
     "title": "Découvre pourquoi des milliers de profs et d'élèves de bachata",
@@ -128,8 +168,14 @@
       "Le design est intuitif, pratique et élégant. J'adore la façon dont elle passe des bases au niveau avancé — les vrais instruments font toute la différence."
     ],
     "places": [
-      "Espagne", "Colombie", "France", "République dominicaine",
-      "Brésil", "Allemagne", "Argentine", "Mexique"
+      "Espagne",
+      "Colombie",
+      "France",
+      "République dominicaine",
+      "Brésil",
+      "Allemagne",
+      "Argentine",
+      "Mexique"
     ]
   },
   "video": {
