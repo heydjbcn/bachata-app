@@ -14,7 +14,7 @@ export function Marquee() {
                 <span className="px-6 font-heading text-xl font-semibold uppercase tracking-[0.2em] text-white/70">
                   {w}
                 </span>
-                <span className="text-[#ff914d]">✦</span>
+                <span className="size-1.5 shrink-0 rounded-full bg-[#ff914d]" />
               </span>
             ))}
           </div>

@@ -12,8 +12,11 @@ export function Hero() {
       {/* fondo moderno: glow naranja muy suave + rejilla de puntos, ambos
           desvanecidos antes del vídeo para que no reaparezca el rectángulo */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute left-[-6%] top-[-18%] h-[680px] w-[680px] rounded-full bg-[radial-gradient(circle,rgba(255,145,77,0.16),transparent_62%)]" />
-        <div className="absolute inset-0 dot-grid [mask-image:linear-gradient(to_right,#000,#000_28%,transparent_52%)]" />
+        {/* glow grande y difuso */}
+        <div className="absolute left-[-10%] top-[-22%] h-[820px] w-[820px] rounded-full bg-[radial-gradient(circle,rgba(255,145,77,0.30),transparent_60%)]" />
+        {/* núcleo más vivo */}
+        <div className="absolute left-[2%] top-[-8%] h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,138,60,0.28),transparent_58%)] blur-[10px]" />
+        <div className="absolute inset-0 dot-grid [mask-image:linear-gradient(to_right,#000,#000_30%,transparent_54%)]" />
       </div>
       <div className="container-x relative grid items-center gap-12 pb-20 pt-12 lg:grid-cols-2 lg:pb-28 lg:pt-20">
         {/* izquierda */}
