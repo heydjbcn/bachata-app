@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Music } from "lucide-react";
 
@@ -45,9 +46,15 @@ export function FeatureGrid() {
               <p className="mt-4 text-sm leading-relaxed text-white/55">
                 {bodies[i]}
               </p>
-              <span className="mt-auto border-t border-white/8 pt-5 text-sm font-semibold text-[#ff914d]">
-                {t("learnMore")}
-              </span>
+              <div className="mt-auto border-t border-white/8 pt-5">
+                <Image
+                  src="/assets/Logo-Bachatappstudio.png"
+                  alt="BachatAppStudio"
+                  width={160}
+                  height={43}
+                  className="h-6 w-auto opacity-80"
+                />
+              </div>
             </article>
           ))}
         </div>
