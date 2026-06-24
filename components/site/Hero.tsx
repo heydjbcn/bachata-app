@@ -9,6 +9,12 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden bg-black pt-[72px]"
     >
+      {/* fondo moderno: glow naranja muy suave + rejilla de puntos, ambos
+          desvanecidos antes del vídeo para que no reaparezca el rectángulo */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <div className="absolute left-[-6%] top-[-18%] h-[680px] w-[680px] rounded-full bg-[radial-gradient(circle,rgba(255,145,77,0.16),transparent_62%)]" />
+        <div className="absolute inset-0 dot-grid [mask-image:linear-gradient(to_right,#000,#000_28%,transparent_52%)]" />
+      </div>
       <div className="container-x relative grid items-center gap-12 pb-20 pt-12 lg:grid-cols-2 lg:pb-28 lg:pt-20">
         {/* izquierda */}
         <div>
