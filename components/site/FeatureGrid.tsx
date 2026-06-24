@@ -4,6 +4,10 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Music, ChevronLeft, ChevronRight } from "lucide-react";
 
+// Padding lateral que alinea la primera tarjeta con el contenido centrado
+// (mismo cálculo que .container-x: max-width 1180px + 1.25rem de padding).
+const EDGE = "max(1.25rem, calc((100vw - 1180px) / 2 + 1.25rem))";
+
 export function FeatureGrid() {
   const t = useTranslations("features");
   const items = t.raw("items") as string[];
@@ -32,12 +36,14 @@ export function FeatureGrid() {
         </p>
       </div>
 
-      <div className="container-x mt-12">
-        {/* fila con scroll horizontal nativo (trackpad / swipe / rueda) */}
-        <div
-          ref={scroller}
-          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
+      {/* fila a sangre: ancho completo, las tarjetas se esconden fuera del
+          margen derecho. Trackpad / swipe / rueda + flechas. */}
+      <div
+        ref={scroller}
+        className="mt-12 flex snap-x snap-mandatory overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        style={{ scrollPaddingLeft: EDGE }}
+      >
+        <div className="flex w-max gap-5" style={{ paddingLeft: EDGE, paddingRight: "1.25rem" }}>
           {items.map((title, i) => (
             <article
               key={i}
@@ -56,26 +62,26 @@ export function FeatureGrid() {
             </article>
           ))}
         </div>
+      </div>
 
-        {/* flechas */}
-        <div className="mt-8 flex items-center justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => scrollByCard(-1)}
-            aria-label="Previous"
-            className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
-          >
-            <ChevronLeft className="size-5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByCard(1)}
-            aria-label="Next"
-            className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
-          >
-            <ChevronRight className="size-5" />
-          </button>
-        </div>
+      {/* flechas */}
+      <div className="container-x mt-8 flex items-center justify-center gap-3">
+        <button
+          type="button"
+          onClick={() => scrollByCard(-1)}
+          aria-label="Previous"
+          className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
+        >
+          <ChevronLeft className="size-5" />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollByCard(1)}
+          aria-label="Next"
+          className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
+        >
+          <ChevronRight className="size-5" />
+        </button>
       </div>
     </section>
   );
