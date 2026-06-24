@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Gauge, BarChart3 } from "lucide-react";
 import { StoreBadges } from "@/components/site/StoreBadges";
 
 export function Hero() {
@@ -56,49 +54,19 @@ export function Hero() {
           </div>
         </div>
 
-        {/* derecha: móvil + aro + chips */}
-        <div className="relative mx-auto flex aspect-square w-full max-w-[520px] items-center justify-center">
-          <div
-            className="absolute inset-[6%] rounded-full glow-orange"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 rounded-full border border-dashed border-[#ff914d]/40"
-            aria-hidden
-          />
-
-          <Image
-            src="/assets/Post-De-Instagram-Mockup-De-Telefono-Con-Promocion-Para-Negocios-Moderno-Negro-Y-Rojo.webp"
-            alt="BachatAppStudio app on a phone"
-            width={520}
-            height={628}
-            priority
-            className="relative z-10 w-[68%] drop-shadow-2xl"
-          />
-
-          {/* chip Speed */}
-          <div className="absolute right-[2%] top-[12%] z-20 flex items-center gap-2 rounded-xl border border-white/10 bg-[#141414]/90 px-3 py-2 backdrop-blur">
-            <Gauge className="size-4 text-[#ff914d]" />
-            <div className="leading-tight">
-              <p className="text-[10px] uppercase tracking-wide text-white/50">
-                {t("chipSpeed")}
-              </p>
-              <p className="font-heading text-base font-bold text-white">100%</p>
-            </div>
-          </div>
-
-          {/* chip Live stems */}
-          <div className="absolute bottom-[10%] left-0 z-20 flex items-center gap-2 rounded-xl border border-white/10 bg-[#141414]/90 px-3 py-2 backdrop-blur">
-            <BarChart3 className="size-4 text-[#ff914d]" />
-            <div className="leading-tight">
-              <p className="text-[10px] uppercase tracking-wide text-white/50">
-                {t("chipLiveStems")}
-              </p>
-              <p className="font-heading text-base font-bold text-white">
-                {t("chipTracks")}
-              </p>
-            </div>
-          </div>
+        {/* derecha: vídeo en loop (composición original de la web) */}
+        <div className="relative mx-auto w-full max-w-[480px]">
+          <video
+            className="w-full"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-label="BachatAppStudio"
+          >
+            <source src="/assets/hero-loop.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>

@@ -53,13 +53,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <LanguageSelector className="hidden sm:flex" />
           <a
             href="#download"
             className="hidden rounded-full bg-gradient-to-r from-[#ff914d] to-[#ff7a3d] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_8px_24px_-8px_rgba(255,145,77,0.7)] transition-transform hover:scale-[1.03] sm:inline-block"
           >
             {t("getApp")}
           </a>
+          <LanguageSelector className="hidden sm:flex" />
 
           {/* mobile */}
           <Sheet>
