@@ -17,6 +17,17 @@ function fmt(t: number) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
+// preservesPitch nativo (con prefijos antiguos)
+function setPreservePitch(el: HTMLAudioElement) {
+  const e = el as HTMLAudioElement & {
+    mozPreservesPitch?: boolean;
+    webkitPreservesPitch?: boolean;
+  };
+  e.preservesPitch = true;
+  e.mozPreservesPitch = true;
+  e.webkitPreservesPitch = true;
+}
+
 export function Mixer() {
   const [levels, setLevels] = useState<number[]>(MIXER_STEMS.map(() => 100));
   const [speed, setSpeed] = useState(100);
@@ -26,102 +37,69 @@ export function Mixer() {
   const [duration, setDuration] = useState(0);
   const [pos, setPos] = useState(0);
 
-  // refs de audio (no provocan re-render)
   const ctxRef = useRef<AudioContext | null>(null);
-  const buffersRef = useRef<AudioBuffer[]>([]);
+  const elsRef = useRef<HTMLAudioElement[]>([]);
   const gainsRef = useRef<GainNode[]>([]);
-  const sourcesRef = useRef<AudioBufferSourceNode[]>([]);
-  const startedAtRef = useRef(0); // ctx.currentTime cuando arrancó
-  const offsetRef = useRef(0); // segundos dentro del track al arrancar
-  const rateRef = useRef(1);
   const rafRef = useRef<number | null>(null);
 
-  const currentPos = () => {
-    const ctx = ctxRef.current;
-    if (!ctx || !playing) return offsetRef.current;
-    return offsetRef.current + (ctx.currentTime - startedAtRef.current) * rateRef.current;
-  };
-
-  // carga perezosa de los stems
-  const ensureLoaded = async () => {
-    if (ready) return true;
-    setLoading(true);
-    try {
-      const ctx = new (window.AudioContext ||
-        (window as unknown as { webkitAudioContext: typeof AudioContext })
-          .webkitAudioContext)();
-      ctxRef.current = ctx;
-      const buffers = await Promise.all(
-        MIXER_STEMS.map(async (st) => {
-          const res = await fetch(st.file);
-          const arr = await res.arrayBuffer();
-          return await ctx.decodeAudioData(arr);
-        }),
-      );
-      buffersRef.current = buffers;
-      gainsRef.current = MIXER_STEMS.map((_, i) => {
-        const g = ctx.createGain();
-        g.gain.value = levels[i] / 100;
-        g.connect(ctx.destination);
-        return g;
-      });
-      setDuration(Math.max(...buffers.map((b) => b.duration)));
-      setReady(true);
-      setLoading(false);
-      return true;
-    } catch (e) {
-      console.error("stems load error", e);
-      setLoading(false);
-      return false;
-    }
-  };
-
-  const startSources = (offset: number) => {
-    const ctx = ctxRef.current!;
-    const sources = buffersRef.current.map((buf, i) => {
-      const src = ctx.createBufferSource();
-      src.buffer = buf;
-      src.playbackRate.value = rateRef.current;
-      src.connect(gainsRef.current[i]);
-      return src;
+  // crea contexto + 6 <audio> + gain por stem (SÍNCRONO: sin await antes de
+  // play() para no perder el gesto de usuario en iOS).
+  const initAudio = () => {
+    if (ctxRef.current) return;
+    const ctx = new (window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext)();
+    ctxRef.current = ctx;
+    const els: HTMLAudioElement[] = [];
+    const gains: GainNode[] = [];
+    MIXER_STEMS.forEach((st, i) => {
+      const el = new Audio();
+      el.src = st.file;
+      el.preload = "auto";
+      setPreservePitch(el);
+      const src = ctx.createMediaElementSource(el);
+      const g = ctx.createGain();
+      g.gain.value = levels[i] / 100;
+      src.connect(g).connect(ctx.destination);
+      els[i] = el;
+      gains[i] = g;
     });
-    sources.forEach((s) => s.start(0, offset));
-    sourcesRef.current = sources;
-    startedAtRef.current = ctx.currentTime;
-    offsetRef.current = offset;
-    // fin natural -> cuando el primero termina
-    sources[0].onended = () => {
-      if (!sourcesRef.current.includes(sources[0])) return; // parado a mano
-      stopSources();
-      offsetRef.current = 0;
-      setPos(0);
+    elsRef.current = els;
+    gainsRef.current = gains;
+    els[0].addEventListener("loadedmetadata", () =>
+      setDuration(els[0].duration || 0),
+    );
+    els[0].addEventListener("canplaythrough", () => setLoading(false));
+    els[0].addEventListener("ended", () => {
       setPlaying(false);
-    };
-  };
-
-  const stopSources = () => {
-    sourcesRef.current.forEach((s) => {
-      try {
-        s.onended = null;
-        s.stop();
-      } catch {}
+      setPos(0);
+      elsRef.current.forEach((e) => (e.currentTime = 0));
     });
-    sourcesRef.current = [];
+    setReady(true);
   };
 
-  const togglePlay = async () => {
+  const togglePlay = () => {
     if (playing) {
-      offsetRef.current = currentPos();
-      stopSources();
+      elsRef.current.forEach((e) => e.pause());
       setPlaying(false);
       return;
     }
-    const ok = await ensureLoaded();
-    if (!ok) return;
-    await ctxRef.current!.resume();
-    let off = offsetRef.current;
-    if (off >= duration - 0.05) off = 0; // reinicia si estaba al final
-    startSources(off);
+    if (!ctxRef.current) {
+      setLoading(true);
+      initAudio();
+    }
+    void ctxRef.current!.resume();
+    const els = elsRef.current;
+    let t = els[0].currentTime || 0;
+    if (els[0].duration && t >= els[0].duration - 0.05) t = 0;
+    const rate = speed / 100;
+    els.forEach((e) => {
+      setPreservePitch(e);
+      e.playbackRate = rate;
+      if (Math.abs(e.currentTime - t) > 0.02) e.currentTime = t;
+    });
+    // play() síncrono dentro del gesto (iOS). Errores ignorados.
+    els.forEach((e) => void e.play().catch(() => {}));
     setPlaying(true);
   };
 
@@ -133,40 +111,45 @@ export function Mixer() {
   const changeSpeed = (v: number) => {
     setSpeed(v);
     const rate = v / 100;
-    if (playing) {
-      offsetRef.current = currentPos();
-      startedAtRef.current = ctxRef.current!.currentTime;
-    }
-    rateRef.current = rate;
-    sourcesRef.current.forEach((s) => (s.playbackRate.value = rate));
+    elsRef.current.forEach((e) => {
+      setPreservePitch(e);
+      e.playbackRate = rate;
+    });
   };
 
   const seek = (t: number) => {
-    offsetRef.current = t;
     setPos(t);
-    if (playing) {
-      stopSources();
-      startSources(t);
-    }
+    elsRef.current.forEach((e) => (e.currentTime = t));
   };
 
-  // animación de la barra de progreso
+  // bucle: progreso + corrección de drift (elemento 0 = reloj maestro)
   useEffect(() => {
     if (!playing) return;
     const tick = () => {
-      setPos(Math.min(currentPos(), duration));
+      const els = elsRef.current;
+      if (els.length) {
+        const master = els[0].currentTime;
+        setPos(master);
+        for (let i = 1; i < els.length; i++) {
+          if (Math.abs(els[i].currentTime - master) > 0.045) {
+            els[i].currentTime = master;
+          }
+        }
+      }
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [playing, duration]);
+  }, [playing]);
 
   useEffect(() => {
     return () => {
-      stopSources();
+      elsRef.current.forEach((e) => {
+        e.pause();
+        e.src = "";
+      });
       ctxRef.current?.close();
     };
   }, []);
