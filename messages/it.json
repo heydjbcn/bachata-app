@@ -51,11 +51,11 @@
     "title": "Gioca con gli stem. Regola la velocità.",
     "description": "Regola il volume di ogni strumento individualmente, mettendo in risalto quello che ti serve durante le tue lezioni. Vai pure — prova il mixer.",
     "highlights": [
-      "6 stem separati reali",
+      "8 stem separati reali",
       "Silenzia qualsiasi strumento dal vivo",
       "Velocità 50–150% — tono preservato"
     ],
-    "subtitleStems": "Multitraccia dal vivo · 6 stem",
+    "subtitleStems": "Multitraccia dal vivo · 8 stem",
     "statusPlaying": "In riproduzione · multitraccia dal vivo",
     "loading": "Caricamento stem…",
     "speed": "Velocità",
@@ -65,12 +65,14 @@
     "resetTo100": "Torna al 100%",
     "resetSpeed": "Ripristina la velocità al 100%",
     "stems": [
+      "Requinto",
+      "Segunda",
       "Basso",
-      "Chitarra",
-      "Piano",
-      "Percussioni",
-      "Voci",
-      "Altro"
+      "Bongo",
+      "Güira",
+      "Batteria",
+      "Cori",
+      "Voce"
     ]
   },
   "featureSplit": {

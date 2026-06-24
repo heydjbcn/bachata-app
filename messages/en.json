@@ -19,27 +19,43 @@
     "titleAccent": "easy way.",
     "subtitle": "Play with instruments, rhythms, syncopations, speeds and counts — taking your knowledge and your students' to the next level. The ultimate immersive practice experience, powered by the best instructors and musicians of the genre.",
     "stats": [
-      { "value": "8+", "label": "Bachata styles" },
-      { "value": "9", "label": "Real instrument stems" },
-      { "value": "50-150%", "label": "Speed control" }
+      {
+        "value": "8+",
+        "label": "Bachata styles"
+      },
+      {
+        "value": "9",
+        "label": "Real instrument stems"
+      },
+      {
+        "value": "50-150%",
+        "label": "Speed control"
+      }
     ],
     "chipSpeed": "Speed",
     "chipLiveStems": "Live stems",
     "chipTracks": "9 tracks"
   },
   "marquee": {
-    "words": ["INNOVATE", "INSPIRE", "LEAD", "TEACH", "LEARN", "DANCE"]
+    "words": [
+      "INNOVATE",
+      "INSPIRE",
+      "LEAD",
+      "TEACH",
+      "LEARN",
+      "DANCE"
+    ]
   },
   "mixer": {
     "eyebrow": "Innovate · Inspire · Lead",
     "title": "Play with the stems. Adjust the speed.",
     "description": "Adjust the volume of each instrument individually, highlighting the one you need during your classes. Go ahead — try the mixer.",
     "highlights": [
-      "6 real separated stems",
+      "8 real separated stems",
       "Mute any instrument live",
       "Speed 50–150% — pitch preserved"
     ],
-    "subtitleStems": "Live multitrack · 6 stems",
+    "subtitleStems": "Live multitrack · 8 stems",
     "statusPlaying": "Playing · live multitrack",
     "loading": "Loading stems…",
     "speed": "Speed",
@@ -48,13 +64,26 @@
     "seek": "Seek",
     "resetTo100": "Reset to 100%",
     "resetSpeed": "Reset speed to 100%",
-    "stems": ["Bass", "Guitar", "Piano", "Percussion", "Vocals", "Other"]
+    "stems": [
+      "Requinto",
+      "Segunda",
+      "Bass",
+      "Bongo",
+      "Güira",
+      "Drums",
+      "Chorus",
+      "Vocals"
+    ]
   },
   "featureSplit": {
     "eyebrow": "Master Bachata & Merengue with smart tools",
     "title": "Adjust BPM, separate stems, and create something unique.",
     "text": "Teach and learn with precision and professionalism, backed by the world's top bachata dancers and musicians.",
-    "chips": ["Isolate any instrument", "Real musicians", "Studio-quality sound"]
+    "chips": [
+      "Isolate any instrument",
+      "Real musicians",
+      "Studio-quality sound"
+    ]
   },
   "features": {
     "eyebrow": "Powered by Innovation",
@@ -119,7 +148,11 @@
     "titleAccent": "Loved by thousands",
     "titleAfter": "around the world.",
     "text": "Play with instruments, rhythms, timing, syncopations, speeds and counts.",
-    "roles": ["Lead Guitar", "Bass Player", "Saxophonist"]
+    "roles": [
+      "Lead Guitar",
+      "Bass Player",
+      "Saxophonist"
+    ]
   },
   "testimonials": {
     "title": "Discover why thousands of bachata teachers and students",
@@ -137,8 +170,14 @@
       "The design is intuitive, practical, and elegant. I love how it goes from the basics to advanced — the real instruments make all the difference."
     ],
     "places": [
-      "Spain", "Colombia", "France", "Dominican Republic",
-      "Brazil", "Germany", "Argentina", "Mexico"
+      "Spain",
+      "Colombia",
+      "France",
+      "Dominican Republic",
+      "Brazil",
+      "Germany",
+      "Argentina",
+      "Mexico"
     ]
   },
   "video": {

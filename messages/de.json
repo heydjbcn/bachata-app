@@ -51,11 +51,11 @@
     "title": "Spiele mit den Stems. Passe die Geschwindigkeit an.",
     "description": "Passe die Lautstärke jedes Instruments einzeln an und hebe das hervor, das du in deinen Klassen brauchst. Los geht's — probiere den Mixer aus.",
     "highlights": [
-      "6 echte, getrennte Stems",
+      "8 echte, getrennte Stems",
       "Stumme jedes Instrument live",
       "Geschwindigkeit 50–150% — Tonhöhe bleibt erhalten"
     ],
-    "subtitleStems": "Live-Mehrspur · 6 Stems",
+    "subtitleStems": "Live-Mehrspur · 8 Stems",
     "statusPlaying": "Wiedergabe · Live-Mehrspur",
     "loading": "Stems werden geladen…",
     "speed": "Geschwindigkeit",
@@ -65,12 +65,14 @@
     "resetTo100": "Auf 100% zurücksetzen",
     "resetSpeed": "Geschwindigkeit auf 100% zurücksetzen",
     "stems": [
+      "Requinto",
+      "Segunda",
       "Bass",
-      "Gitarre",
-      "Klavier",
+      "Bongo",
+      "Güira",
       "Schlagzeug",
-      "Gesang",
-      "Sonstiges"
+      "Chor",
+      "Gesang"
     ]
   },
   "featureSplit": {

@@ -29,20 +29,23 @@ export const MARQUEE_WORDS = [
   "DANCE",
 ];
 
-// Stems reales separados con IA (Demucs htdemucs_6s) de "Lluvia En La Pared".
-// Cada slider controla el volumen real de ese stem (mute = aislar de verdad).
+// Stems reales (multitrack de DAW) de "Su Lado De Cama". Las 8 pistas tienen
+// la misma duración y línea de tiempo, así que suenan sincronizadas al
+// reproducirlas juntas. Cada slider controla el volumen real de su instrumento.
 export const MIXER_SONG = {
-  title: "Lluvia En La Pared",
-  subtitle: "Live multitrack · 6 stems",
+  title: "Su Lado De Cama",
+  subtitle: "Live multitrack · 8 stems",
 };
 
 export const MIXER_STEMS = [
+  { name: "Requinto", file: "/assets/stems/requinto.mp3" },
+  { name: "Segunda", file: "/assets/stems/segunda.mp3" },
   { name: "Bass", file: "/assets/stems/bass.mp3" },
-  { name: "Guitar", file: "/assets/stems/guitar.mp3" },
-  { name: "Piano", file: "/assets/stems/piano.mp3" },
-  { name: "Percussion", file: "/assets/stems/drums.mp3" },
+  { name: "Bongo", file: "/assets/stems/bongo.mp3" },
+  { name: "Güira", file: "/assets/stems/guira.mp3" },
+  { name: "Drums", file: "/assets/stems/drums.mp3" },
+  { name: "Chorus", file: "/assets/stems/chorus.mp3" },
   { name: "Vocals", file: "/assets/stems/vocals.mp3" },
-  { name: "Other", file: "/assets/stems/other.mp3" },
 ];
 
 export const SPLIT_CHIPS = [

@@ -51,11 +51,11 @@
     "title": "Juega con los stems. Ajusta la velocidad.",
     "description": "Ajusta el volumen de cada instrumento individualmente, resaltando el que necesites durante tus clases. Adelante — prueba el mezclador.",
     "highlights": [
-      "6 stems separados reales",
+      "8 stems separados reales",
       "Silencia cualquier instrumento en directo",
       "Velocidad 50–150% — sin alterar el tono"
     ],
-    "subtitleStems": "Multipista en vivo · 6 stems",
+    "subtitleStems": "Multipista en vivo · 8 stems",
     "statusPlaying": "Reproduciendo · multipista en vivo",
     "loading": "Cargando stems…",
     "speed": "Velocidad",
@@ -65,12 +65,14 @@
     "resetTo100": "Volver al 100%",
     "resetSpeed": "Restablecer velocidad al 100%",
     "stems": [
+      "Requinto",
+      "Segunda",
       "Bajo",
-      "Guitarra",
-      "Piano",
-      "Percusión",
-      "Voces",
-      "Otros"
+      "Bongó",
+      "Güira",
+      "Batería",
+      "Coros",
+      "Voz"
     ]
   },
   "featureSplit": {
