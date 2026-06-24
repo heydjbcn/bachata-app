@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, Timer, Loader2 } from "lucide-react";
+import { Play, Pause, Timer, Loader2, RotateCcw } from "lucide-react";
 import { MIXER_SONG, MIXER_STEMS } from "@/lib/content";
 
 function rangeBg(value: number) {
@@ -122,6 +122,40 @@ export function Mixer() {
     elsRef.current.forEach((e) => (e.currentTime = t));
   };
 
+  // animación de retorno progresivo a 100% (números + barra + audio)
+  const animRef = useRef<Record<string, number>>({});
+  const cancelAnim = (key: string) => {
+    if (animRef.current[key]) {
+      cancelAnimationFrame(animRef.current[key]);
+      delete animRef.current[key];
+    }
+  };
+  const animateTo = (
+    key: string,
+    from: number,
+    to: number,
+    apply: (v: number) => void,
+  ) => {
+    cancelAnim(key);
+    const dur = 550;
+    const t0 = performance.now();
+    const ease = (p: number) => 1 - Math.pow(1 - p, 3);
+    const step = (now: number) => {
+      const p = Math.min(1, (now - t0) / dur);
+      apply(Math.round(from + (to - from) * ease(p)));
+      if (p < 1) {
+        animRef.current[key] = requestAnimationFrame(step);
+      } else {
+        apply(to);
+        delete animRef.current[key];
+      }
+    };
+    animRef.current[key] = requestAnimationFrame(step);
+  };
+  const resetLevel = (i: number) =>
+    animateTo("s" + i, levels[i], 100, (v) => setLevel(i, v));
+  const resetSpeed = () => animateTo("speed", speed, 100, (v) => changeSpeed(v));
+
   // bucle: progreso + corrección de drift (elemento 0 = reloj maestro)
   useEffect(() => {
     if (!playing) return;
@@ -145,7 +179,9 @@ export function Mixer() {
   }, [playing]);
 
   useEffect(() => {
+    const anims = animRef.current;
     return () => {
+      Object.values(anims).forEach((id) => cancelAnimationFrame(id));
       elsRef.current.forEach((e) => {
         e.pause();
         e.src = "";
@@ -233,26 +269,41 @@ export function Mixer() {
         </div>
 
         {/* sliders por stem */}
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {MIXER_STEMS.map((t, i) => (
             <div
               key={t.name}
-              className="rounded-2xl border border-white/8 bg-white/[0.02] p-5"
+              className="rounded-2xl border border-white/8 bg-white/[0.02] p-4"
             >
               <div className="flex items-center justify-between">
                 <span className="font-heading text-base font-semibold tracking-wide text-white">
                   {t.name}
                 </span>
-                <span className="font-heading text-sm font-bold text-[#ff914d]">
-                  {levels[i]}%
-                </span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => resetLevel(i)}
+                    disabled={levels[i] === 100}
+                    aria-label={`Reset ${t.name} to 100%`}
+                    title="Reset to 100%"
+                    className="text-white/35 transition-colors hover:text-[#ff914d] disabled:pointer-events-none disabled:opacity-0"
+                  >
+                    <RotateCcw className="size-3.5" />
+                  </button>
+                  <span className="w-10 text-right font-heading text-sm font-bold text-[#ff914d]">
+                    {levels[i]}%
+                  </span>
+                </div>
               </div>
               <input
                 type="range"
                 min={0}
                 max={100}
                 value={levels[i]}
-                onChange={(e) => setLevel(i, Number(e.target.value))}
+                onChange={(e) => {
+                  cancelAnim("s" + i);
+                  setLevel(i, Number(e.target.value));
+                }}
                 className="mixer-range mt-4"
                 style={rangeBg(levels[i])}
                 aria-label={`${t.name} volume`}
@@ -274,14 +325,29 @@ export function Mixer() {
             min={50}
             max={150}
             value={speed}
-            onChange={(e) => changeSpeed(Number(e.target.value))}
+            onChange={(e) => {
+              cancelAnim("speed");
+              changeSpeed(Number(e.target.value));
+            }}
             className="mixer-range flex-1"
             style={rangeBg(((speed - 50) / 100) * 100)}
             aria-label="Speed"
           />
-          <span className="font-heading text-3xl font-bold text-[#ff914d] sm:w-24 sm:text-right">
-            {speed}%
-          </span>
+          <div className="flex items-center justify-end gap-2 sm:w-28">
+            <button
+              type="button"
+              onClick={resetSpeed}
+              disabled={speed === 100}
+              aria-label="Reset speed to 100%"
+              title="Reset to 100%"
+              className="text-white/35 transition-colors hover:text-[#ff914d] disabled:pointer-events-none disabled:opacity-0"
+            >
+              <RotateCcw className="size-4" />
+            </button>
+            <span className="font-heading text-3xl font-bold text-[#ff914d]">
+              {speed}%
+            </span>
+          </div>
         </div>
       </div>
     </div>
