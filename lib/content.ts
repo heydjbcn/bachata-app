@@ -29,13 +29,20 @@ export const MARQUEE_WORDS = [
   "DANCE",
 ];
 
-export const MIXER_TRACKS = [
-  { name: "Bass", value: 85 },
-  { name: "Requinto", value: 100 },
-  { name: "Segunda", value: 70 },
-  { name: "Maracas", value: 55 },
-  { name: "Güira", value: 75 },
-  { name: "Bongo", value: 65 },
+// Stems reales separados con IA (Demucs htdemucs_6s) de "Lluvia En La Pared".
+// Cada slider controla el volumen real de ese stem (mute = aislar de verdad).
+export const MIXER_SONG = {
+  title: "Lluvia En La Pared",
+  subtitle: "Live multitrack · 6 stems",
+};
+
+export const MIXER_STEMS = [
+  { name: "Bass", file: "/assets/stems/bass.mp3" },
+  { name: "Guitar", file: "/assets/stems/guitar.mp3" },
+  { name: "Piano", file: "/assets/stems/piano.mp3" },
+  { name: "Percussion", file: "/assets/stems/drums.mp3" },
+  { name: "Vocals", file: "/assets/stems/vocals.mp3" },
+  { name: "Other", file: "/assets/stems/other.mp3" },
 ];
 
 export const SPLIT_CHIPS = [
