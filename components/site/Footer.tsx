@@ -44,7 +44,7 @@ export function Footer() {
           {STORE_LINKS.email}
         </a>
         <p className="mt-2 text-sm text-white/60">
-          The App for bachata masters
+          The app for bachata masters
         </p>
 
         <div className="mt-6 flex items-center gap-5">
@@ -72,11 +72,11 @@ export function Footer() {
         </div>
 
         <p className="mt-8 text-xs text-white/45">
-          @2025 BachatApp Studio. All rights reserved.{" "}
+          @2025 BachatAppStudio. All rights reserved. ·{" "}
           <Link href="/privacy-policy" className="hover:text-white/80">
             Privacy Policy
           </Link>{" "}
-          |{" "}
+          ·{" "}
           <Link href="/terms-and-conditions" className="hover:text-white/80">
             Terms &amp; Conditions
           </Link>

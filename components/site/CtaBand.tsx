@@ -14,10 +14,10 @@ export function CtaBand({
   return (
     <section id={id} className="peach-band py-16 text-center text-[#1a1208]">
       <div className="container-x flex flex-col items-center">
-        <h2 className="max-w-3xl font-heading text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h2 className="max-w-3xl font-heading text-3xl font-bold leading-tight sm:text-4xl">
           {heading}
         </h2>
-        <p className="mt-4 font-heading text-base font-bold tracking-wide text-[#c2540a]">
+        <p className="mt-4 font-heading text-base font-bold uppercase tracking-wide text-[#c2540a]">
           {subtitle}
         </p>
         {badges && <StoreBadges variant="black" className="mt-7 justify-center" />}

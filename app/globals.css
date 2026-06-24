@@ -9,8 +9,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-roboto), var(--font-inter), sans-serif;
+  --font-heading: var(--font-oswald), var(--font-inter), sans-serif;
   --color-accent-orange: #ff914d;
+  --color-accent-coral: #ff8a80;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -130,12 +131,14 @@
 /* ---- BachatAppStudio brand ---- */
 :root {
   --accent: #ff914d;
+  --coral: #ff8a80;
   --peach-from: #ffe6d2;
   --peach-to: #ffc28f;
 }
 
 .font-heading {
   font-family: var(--font-heading);
+  letter-spacing: 0.01em;
 }
 
 .text-accent {
@@ -144,6 +147,97 @@
 
 .peach-band {
   background: linear-gradient(180deg, var(--peach-from) 0%, var(--peach-to) 100%);
+}
+
+/* texto con degradado naranja→melocotón (titulares acento) */
+.text-gradient {
+  background: linear-gradient(95deg, #ff914d, #ffd0ac);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* fondo de puntos sutil */
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* card oscura con gradiente */
+.card-dark {
+  background: linear-gradient(180deg, #121212, #0a0a0a);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* glow radial naranja */
+.glow-orange {
+  background: radial-gradient(
+    circle,
+    rgba(255, 145, 77, 0.3),
+    rgba(0, 0, 0, 0) 65%
+  );
+}
+
+/* ecualizador del mixer */
+@keyframes eqbar {
+  from {
+    transform: scaleY(0.4);
+  }
+  to {
+    transform: scaleY(1.3);
+  }
+}
+
+/* marquee */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-x 28s linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+/* slider del mixer (input range) */
+.mixer-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  cursor: pointer;
+}
+.mixer-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #ff914d;
+  box-shadow: 0 0 0 4px rgba(255, 145, 77, 0.15);
+  cursor: grab;
+}
+.mixer-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #ff914d;
+  cursor: grab;
 }
 
 /* contenido centrado */
