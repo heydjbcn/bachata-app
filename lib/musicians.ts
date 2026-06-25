@@ -133,6 +133,35 @@ export async function createMusician(
   return { ok: true, musician: a };
 }
 
+// Para que las cuentas de admin entren en la app: busca o crea (aprobado) un
+// músico con ese email/usuario. Si ya existe, lo deja aprobado.
+export async function findOrCreateApproved(
+  email: string,
+  name: string,
+  password: string,
+): Promise<Account> {
+  const existing = await findByEmail(email);
+  if (existing) {
+    if (!existing.approved) {
+      existing.approved = true;
+      existing.approvedAt = new Date().toISOString();
+      existing.approvedBy = "admin";
+      await writeAccount(existing);
+    }
+    return existing;
+  }
+  const r = await createMusician(name, email, password);
+  if (r.ok) {
+    r.musician.approved = true;
+    r.musician.approvedAt = new Date().toISOString();
+    r.musician.approvedBy = "admin";
+    await writeAccount(r.musician);
+    return r.musician;
+  }
+  // carrera: se creó en paralelo
+  return (await findByEmail(email))!;
+}
+
 export async function setApproved(
   id: string,
   approved: boolean,
