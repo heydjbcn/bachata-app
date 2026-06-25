@@ -1,0 +1,9 @@
+node_modules
+.next
+deploy
+.git
+.playwright-mcp
+*.log
+.DS_Store
+README*.md
+docs
