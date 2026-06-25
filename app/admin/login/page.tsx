@@ -53,9 +53,9 @@ export default function AdminLogin() {
 
         <div className="mt-7 space-y-4">
           <input
-            type="email"
+            type="text"
             autoComplete="username"
-            placeholder="Email"
+            placeholder="Usuario o email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={field}
