@@ -14,9 +14,9 @@ export function ArtistsHero() {
       </div>
 
       <div className="container-x relative flex flex-col items-center pb-20 pt-16 text-center lg:pb-28 lg:pt-24">
-        <span className="inline-flex items-center gap-2 rounded-full border border-[#ff914d]/30 bg-[#ff914d]/10 px-4 py-1.5 text-sm font-medium text-[#ffb98a]">
-          <span className="size-2 rounded-full bg-[#ff914d]" />
-          {t("eyebrow")}
+        <span className="inline-flex max-w-full items-center gap-2 whitespace-nowrap rounded-full border border-[#ff914d]/30 bg-[#ff914d]/10 px-3.5 py-1.5 text-[11px] font-medium text-[#ffb98a] sm:px-4 sm:text-sm">
+          <span className="size-2 shrink-0 rounded-full bg-[#ff914d]" />
+          <span className="truncate">{t("eyebrow")}</span>
         </span>
 
         <h1 className="mt-6 max-w-3xl font-heading text-5xl font-bold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
