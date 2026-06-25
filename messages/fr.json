@@ -411,7 +411,9 @@
       "errType": "Seuls les fichiers .wav et .mp3 sont pris en charge.",
       "errUpload": "Échec du téléchargement. Veuillez réessayer.",
       "errBig": "Ce fichier est très volumineux et son téléchargement peut échouer. Le MP3 est recommandé.",
-      "success": "Soumission reçue. Votre dossier musical est prêt à être examiné, et notre équipe vous recontactera pour l'étape d'intégration suivante."
+      "success": "Soumission reçue. Votre dossier musical est prêt à être examiné, et notre équipe vous recontactera pour l'étape d'intégration suivante.",
+      "agreementToggle": "Lire les conditions d'utilisation completes",
+      "agreeShort": "J'accepte les conditions de droits d'usage"
     },
     "cta": {
       "heading": "Vous êtes musicien ? Partagez votre son avec le monde.",

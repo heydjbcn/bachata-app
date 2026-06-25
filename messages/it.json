@@ -411,7 +411,9 @@
       "errType": "Sono supportati solo file .wav e .mp3.",
       "errUpload": "Caricamento non riuscito. Riprova.",
       "errBig": "Questo file è molto grande e il caricamento potrebbe non riuscire. Si consiglia l'MP3.",
-      "success": "Invio ricevuto. Il tuo pacchetto musicale è pronto per la revisione e il nostro team ti contatterà per il prossimo passo dell'integrazione."
+      "success": "Invio ricevuto. Il tuo pacchetto musicale è pronto per la revisione e il nostro team ti contatterà per il prossimo passo dell'integrazione.",
+      "agreementToggle": "Leggi i termini di utilizzo completi",
+      "agreeShort": "Accetto i termini sui diritti di utilizzo"
     },
     "cta": {
       "heading": "Sei un musicista? Condividi il tuo sound con il mondo.",

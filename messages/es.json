@@ -411,7 +411,9 @@
       "errType": "Solo se admiten archivos .wav y .mp3.",
       "errUpload": "La subida ha fallado. Intentalo de nuevo.",
       "errBig": "Este archivo es muy grande y puede fallar al subirse. Se recomienda MP3.",
-      "success": "Envio recibido. Tu paquete de musica esta listo para revision y nuestro equipo se pondra en contacto para el siguiente paso de integracion."
+      "success": "Envio recibido. Tu paquete de musica esta listo para revision y nuestro equipo se pondra en contacto para el siguiente paso de integracion.",
+      "agreementToggle": "Leer los terminos de uso completos",
+      "agreeShort": "Acepto los terminos de derechos de uso"
     },
     "cta": {
       "heading": "Eres musico? Comparte tu sonido con el mundo.",

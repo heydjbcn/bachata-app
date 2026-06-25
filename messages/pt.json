@@ -411,7 +411,9 @@
       "errType": "Apenas são suportados ficheiros .wav e .mp3.",
       "errUpload": "O envio falhou. Por favor, tenta novamente.",
       "errBig": "Este ficheiro é muito grande e o envio pode falhar. Recomenda-se MP3.",
-      "success": "Envio recebido. O teu pacote de música está pronto para revisão e a nossa equipa entrará em contacto para o próximo passo de integração."
+      "success": "Envio recebido. O teu pacote de música está pronto para revisão e a nossa equipa entrará em contacto para o próximo passo de integração.",
+      "agreementToggle": "Ler os termos de uso completos",
+      "agreeShort": "Aceito os termos dos direitos de uso"
     },
     "cta": {
       "heading": "És músico? Partilha o teu som com o mundo.",

@@ -411,7 +411,9 @@
       "errType": "Only .wav and .mp3 files are supported.",
       "errUpload": "Upload failed. Please try again.",
       "errBig": "This file is very large and may fail to upload. MP3 is recommended.",
-      "success": "Submission received. Your music package is ready for review, and our team will follow up for the next integration step."
+      "success": "Submission received. Your music package is ready for review, and our team will follow up for the next integration step.",
+      "agreementToggle": "Read the full usage terms",
+      "agreeShort": "I accept the usage rights terms"
     },
     "cta": {
       "heading": "Are you a musician? Share your sound with the world.",

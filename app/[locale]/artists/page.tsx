@@ -35,7 +35,7 @@ export default async function ArtistsPage({ params }: Props) {
         <ArtistsHow />
 
         <section id="submission" className="scroll-mt-20 bg-black pb-24 pt-4">
-          <div className="container-x">
+          <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5">
             <FormHeading />
             <div className="mt-10">
               <ArtistForm />

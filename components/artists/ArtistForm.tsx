@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Music2, UploadCloud, X, CheckCircle2 } from "lucide-react";
+import { Music2, UploadCloud, X, CheckCircle2, ChevronDown } from "lucide-react";
 import { ARTIST_GENRES } from "@/lib/content";
 
 type FileItem = {
@@ -177,7 +177,7 @@ export function ArtistForm() {
       ref={formRef}
       onSubmit={onSubmit}
       noValidate
-      className="lg-panel mx-auto max-w-3xl rounded-3xl p-6 sm:p-9"
+      className="lg-panel mx-auto max-w-3xl rounded-3xl p-4 sm:p-9"
     >
       <h3 className="font-heading text-2xl font-bold text-white">
         {t("cardTitle")}
@@ -297,36 +297,39 @@ export function ArtistForm() {
         )}
       </div>
 
-      {/* acuerdo de derechos */}
+      {/* acuerdo de derechos: check corto + términos colapsados */}
       <div id="agreement" className="mt-8 scroll-mt-24">
-        <h4 className="font-heading text-lg font-bold text-white">{t("agreementTitle")}</h4>
-        <p className="mt-1 text-sm text-white/55">{t("agreementSubtitle")}</p>
-
-        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm leading-relaxed text-white/65">
-          <p className="font-heading font-bold text-white">{t("agreementHeading")}</p>
-          <p className="mt-3">{t("agreementP1")}</p>
-          <p className="mt-3">{t("agreementP2")}</p>
-          <p className="mt-3 font-medium text-white/80">{t("agreementUsersTitle")}</p>
-          <ul className="mt-2 space-y-1.5">
-            {(t.raw("agreementBullets") as string[]).map((b, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="mt-1 size-1.5 shrink-0 rounded-full bg-[#ff914d]" />
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-3">{t("agreementP3")}</p>
-          <p className="mt-3">{t("agreementP4")}</p>
-        </div>
-
-        <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm text-white/75">
+        <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm font-medium text-white/85">
           <input
             type="checkbox"
             name="agree"
-            className="mt-0.5 size-4 shrink-0 accent-[#ff914d]"
+            className="size-4 shrink-0 accent-[#ff914d]"
           />
-          <span>{t("agree")}</span>
+          <span>{t("agreeShort")}</span>
         </label>
+
+        <details className="group mt-3 rounded-2xl border border-white/10 bg-white/[0.02]">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-medium text-[#ffb98a] transition-colors hover:text-[#ff914d] [&::-webkit-details-marker]:hidden">
+            <span>{t("agreementToggle")}</span>
+            <ChevronDown className="size-4 shrink-0 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="border-t border-white/10 px-4 py-4 text-sm leading-relaxed text-white/65">
+            <p className="font-heading font-bold text-white">{t("agreementHeading")}</p>
+            <p className="mt-3">{t("agreementP1")}</p>
+            <p className="mt-3">{t("agreementP2")}</p>
+            <p className="mt-3 font-medium text-white/80">{t("agreementUsersTitle")}</p>
+            <ul className="mt-2 space-y-1.5">
+              {(t.raw("agreementBullets") as string[]).map((b, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="mt-1 size-1.5 shrink-0 rounded-full bg-[#ff914d]" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3">{t("agreementP3")}</p>
+            <p className="mt-3">{t("agreementP4")}</p>
+          </div>
+        </details>
       </div>
 
       {error && (

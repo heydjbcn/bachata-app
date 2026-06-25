@@ -411,7 +411,9 @@
       "errType": "Es werden nur .wav- und .mp3-Dateien unterstützt.",
       "errUpload": "Upload fehlgeschlagen. Bitte versuche es erneut.",
       "errBig": "Diese Datei ist sehr groß und der Upload könnte fehlschlagen. MP3 wird empfohlen.",
-      "success": "Einreichung erhalten. Dein Musikpaket ist bereit zur Prüfung, und unser Team meldet sich für den nächsten Integrationsschritt."
+      "success": "Einreichung erhalten. Dein Musikpaket ist bereit zur Prüfung, und unser Team meldet sich für den nächsten Integrationsschritt.",
+      "agreementToggle": "Vollstandige Nutzungsbedingungen lesen",
+      "agreeShort": "Ich akzeptiere die Nutzungsbedingungen"
     },
     "cta": {
       "heading": "Bist du Musiker? Teile deinen Sound mit der Welt.",
