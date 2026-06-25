@@ -43,9 +43,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* enlace a artistas también en la cabecera móvil */}
+          <Link
+            href="/artists"
+            className="shrink-0 whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-[#ffb98a] transition-colors hover:text-[#ff914d] md:hidden"
+          >
+            {t("forArtists")}
+          </Link>
           <a
             href="#download"
-            className="lg-orange rounded-full px-4 py-2 text-sm font-semibold text-black hover:scale-[1.03] sm:px-5 sm:py-2.5"
+            className="shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold text-black hover:scale-[1.03] lg-orange sm:px-5 sm:py-2.5"
           >
             {t("getApp")}
           </a>
