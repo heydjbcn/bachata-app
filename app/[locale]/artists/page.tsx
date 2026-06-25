@@ -26,9 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ArtistsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const tn = await getTranslations({ locale, namespace: "artists.nav" });
+  const nav = [
+    { label: tn("whyJoin"), href: "#value" },
+    { label: tn("howWorks"), href: "#how" },
+    { label: tn("form"), href: "#submission" },
+    { label: tn("rights"), href: "#agreement" },
+  ];
   return (
     <>
-      <Header />
+      <Header nav={nav} forArtists={false} />
       <main className="bg-black">
         <ArtistsHero />
         <ArtistsStats />

@@ -285,7 +285,11 @@
       "description": "당신의 스템을 업로드하고, 전 세계 댄서, 강사, 페스티벌이 BachatApp Studio 안에서 당신의 음악을 연구하고 활용하게 하세요."
     },
     "nav": {
-      "forArtists": "아티스트용"
+      "forArtists": "아티스트용",
+      "whyJoin": "참여 이유",
+      "howWorks": "이용 방법",
+      "form": "아티스트 폼",
+      "rights": "사용 권한"
     },
     "hero": {
       "eyebrow": "바차타와 열대 음악 아티스트를 위해 제작",

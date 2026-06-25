@@ -25,7 +25,7 @@ export default async function AppPage({ params }: Props) {
   setRequestLocale(locale);
   return (
     <>
-      <Header />
+      <Header nav={[]} forArtists={false} />
       <main className="bg-black">
         <section className="relative overflow-hidden bg-black px-4 pb-24 pt-32">
           <div

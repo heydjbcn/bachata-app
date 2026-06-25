@@ -285,7 +285,11 @@
       "description": "Upload your stems and let dancers, teachers and festivals worldwide study and use your music inside BachatApp Studio."
     },
     "nav": {
-      "forArtists": "For artists"
+      "forArtists": "For artists",
+      "whyJoin": "Why artists join",
+      "howWorks": "How it works",
+      "form": "Artist form",
+      "rights": "Usage rights"
     },
     "hero": {
       "eyebrow": "Built for bachata and tropical music artists",

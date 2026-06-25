@@ -285,7 +285,11 @@
       "description": "Carica i tuoi stems e lascia che ballerini, insegnanti e festival di tutto il mondo studino e usino la tua musica dentro BachatApp Studio."
     },
     "nav": {
-      "forArtists": "Per gli artisti"
+      "forArtists": "Per gli artisti",
+      "whyJoin": "Perche partecipare",
+      "howWorks": "Come funziona",
+      "form": "Modulo artista",
+      "rights": "Diritti di utilizzo"
     },
     "hero": {
       "eyebrow": "Creato per artisti di bachata e musica tropicale",
