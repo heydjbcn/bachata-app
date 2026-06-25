@@ -19,7 +19,7 @@ export function Header() {
             width={220}
             height={64}
             priority
-            className="h-9 w-auto sm:h-10"
+            className="h-9 w-auto md:h-14"
           />
         </Link>
 
@@ -34,19 +34,13 @@ export function Header() {
               {t(item.key as "features" | "mixer" | "musicians" | "reviews")}
             </a>
           ))}
-          <Link
-            href="/artists"
-            className="lg-ghost ml-1 rounded-full px-4 py-1.5 text-sm font-medium text-white hover:scale-[1.03]"
-          >
-            {t("forArtists")}
-          </Link>
         </nav>
 
-        <div className="flex items-center gap-2">
-          {/* enlace a artistas también en la cabecera móvil */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* enlace a artistas junto al botón de descarga (móvil y escritorio) */}
           <Link
             href="/artists"
-            className="lg-ghost shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-white hover:scale-[1.03] md:hidden"
+            className="lg-ghost shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-white hover:scale-[1.03] sm:px-4"
           >
             {t("forArtists")}
           </Link>
