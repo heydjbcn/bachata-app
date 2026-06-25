@@ -36,7 +36,7 @@ export function Header() {
           ))}
           <Link
             href="/artists"
-            className="rounded-full px-4 py-1.5 text-sm font-medium text-[#ffb98a] transition-colors hover:bg-[#ff914d]/10 hover:text-[#ff914d]"
+            className="lg-ghost ml-1 rounded-full px-4 py-1.5 text-sm font-medium text-white hover:scale-[1.03]"
           >
             {t("forArtists")}
           </Link>
@@ -46,7 +46,7 @@ export function Header() {
           {/* enlace a artistas también en la cabecera móvil */}
           <Link
             href="/artists"
-            className="shrink-0 whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-[#ffb98a] transition-colors hover:text-[#ff914d] md:hidden"
+            className="lg-ghost shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-white hover:scale-[1.03] md:hidden"
           >
             {t("forArtists")}
           </Link>
