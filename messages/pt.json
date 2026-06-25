@@ -419,6 +419,37 @@
       "heading": "És músico? Partilha o teu som com o mundo.",
       "subtitle": "Envia os teus stems para o BachatApp Studio",
       "button": "Envia a tua música"
-    }
+    },
+    "register": {
+      "title": "Registe-se como artista",
+      "subtitle": "Crie a sua conta para enviar os seus stems a partir da app.",
+      "name": "Nome completo",
+      "namePlaceholder": "O seu nome ou nome artistico",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@exemplo.com",
+      "password": "Palavra-passe",
+      "passwordPlaceholder": "Pelo menos 6 caracteres",
+      "submit": "Criar conta",
+      "submitting": "A criar...",
+      "successTitle": "Conta criada",
+      "success": "A sua conta esta pendente de aprovacao. Vamos revisa-la e avisa-lo. Depois de aprovada, descarregue a app e entre com o seu e-mail e palavra-passe.",
+      "errName": "Introduza o seu nome.",
+      "errEmail": "Introduza um e-mail valido.",
+      "errPassword": "A palavra-passe deve ter pelo menos 6 caracteres.",
+      "errTaken": "Esse e-mail ja esta registado.",
+      "errGeneric": "Algo correu mal. Tente novamente.",
+      "haveAccount": "Ja tem conta? Descarregue a app",
+      "toApp": "Descarregar a app"
+    },
+    "app": {
+      "title": "Descarregar a app",
+      "subtitle": "Envie os seus stems a partir do telemovel. Entre com o e-mail e a palavra-passe com que se registou.",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "Disponivel em breve",
+      "note": "App interna: precisa de uma conta aprovada para entrar.",
+      "needAccount": "Nao tem conta? Registe-se aqui"
+    },
+    "landingCta": "Envia com frequencia? Registe-se e use a app"
   }
 }

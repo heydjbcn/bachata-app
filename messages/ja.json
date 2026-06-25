@@ -419,6 +419,37 @@
       "heading": "ミュージシャンの方へ。あなたのサウンドを世界に届けましょう。",
       "subtitle": "ステムをBachatApp Studioにアップロード",
       "button": "音楽を提出する"
-    }
+    },
+    "register": {
+      "title": "アーティストとして登録",
+      "subtitle": "アプリからステムをアップロードするにはアカウントを作成してください。",
+      "name": "氏名",
+      "namePlaceholder": "名前またはアーティスト名",
+      "email": "メールアドレス",
+      "emailPlaceholder": "you@example.com",
+      "password": "パスワード",
+      "passwordPlaceholder": "6文字以上",
+      "submit": "アカウントを作成",
+      "submitting": "作成中...",
+      "successTitle": "アカウント作成完了",
+      "success": "アカウントは承認待ちです。確認のうえご連絡します。承認されたらアプリをダウンロードし、メールアドレスとパスワードでログインしてください。",
+      "errName": "名前を入力してください。",
+      "errEmail": "有効なメールアドレスを入力してください。",
+      "errPassword": "パスワードは6文字以上にしてください。",
+      "errTaken": "そのメールアドレスは既に登録されています。",
+      "errGeneric": "問題が発生しました。もう一度お試しください。",
+      "haveAccount": "すでにアカウントをお持ちですか？アプリをダウンロード",
+      "toApp": "アプリをダウンロード"
+    },
+    "app": {
+      "title": "アプリをダウンロード",
+      "subtitle": "スマホからステムをアップロード。登録したメールアドレスとパスワードでログインしてください。",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "まもなく提供",
+      "note": "内部アプリ：ログインには承認済みアカウントが必要です。",
+      "needAccount": "アカウントがありませんか？こちらで登録"
+    },
+    "landingCta": "よくアップロードしますか？登録してアプリを使いましょう"
   }
 }

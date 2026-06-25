@@ -419,6 +419,37 @@
       "heading": "Vous êtes musicien ? Partagez votre son avec le monde.",
       "subtitle": "Téléchargez vos stems sur BachatApp Studio",
       "button": "Soumettez votre musique"
-    }
+    },
+    "register": {
+      "title": "Inscrivez-vous en tant qu'artiste",
+      "subtitle": "Creez votre compte pour telecharger vos stems depuis l'app.",
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom ou nom d'artiste",
+      "email": "E-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Au moins 6 caracteres",
+      "submit": "Creer un compte",
+      "submitting": "Creation...",
+      "successTitle": "Compte cree",
+      "success": "Votre compte est en attente d'approbation. Nous l'examinerons et vous tiendrons informe. Une fois approuve, telechargez l'app et connectez-vous avec votre e-mail et mot de passe.",
+      "errName": "Veuillez saisir votre nom.",
+      "errEmail": "Veuillez saisir un e-mail valide.",
+      "errPassword": "Le mot de passe doit comporter au moins 6 caracteres.",
+      "errTaken": "Cet e-mail est deja enregistre.",
+      "errGeneric": "Une erreur s'est produite. Reessayez.",
+      "haveAccount": "Vous avez deja un compte ? Telechargez l'app",
+      "toApp": "Telecharger l'app"
+    },
+    "app": {
+      "title": "Telecharger l'app",
+      "subtitle": "Telechargez vos stems depuis votre telephone. Connectez-vous avec l'e-mail et le mot de passe de votre inscription.",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "Bientot disponible",
+      "note": "App interne : il vous faut un compte approuve pour vous connecter.",
+      "needAccount": "Pas de compte ? Inscrivez-vous ici"
+    },
+    "landingCta": "Vous publiez souvent ? Inscrivez-vous et utilisez l'app"
   }
 }

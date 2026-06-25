@@ -419,6 +419,37 @@
       "heading": "Bist du Musiker? Teile deinen Sound mit der Welt.",
       "subtitle": "Lade deine Stems zu BachatApp Studio hoch",
       "button": "Reiche deine Musik ein"
-    }
+    },
+    "register": {
+      "title": "Als Kunstler registrieren",
+      "subtitle": "Erstelle dein Konto, um deine Stems aus der App hochzuladen.",
+      "name": "Vollstandiger Name",
+      "namePlaceholder": "Dein Name oder Kunstlername",
+      "email": "E-Mail",
+      "emailPlaceholder": "du@beispiel.com",
+      "password": "Passwort",
+      "passwordPlaceholder": "Mindestens 6 Zeichen",
+      "submit": "Konto erstellen",
+      "submitting": "Wird erstellt...",
+      "successTitle": "Konto erstellt",
+      "success": "Dein Konto wartet auf Freigabe. Wir prufen es und melden uns. Nach der Freigabe lade die App herunter und melde dich mit deiner E-Mail und deinem Passwort an.",
+      "errName": "Bitte gib deinen Namen ein.",
+      "errEmail": "Bitte gib eine gultige E-Mail ein.",
+      "errPassword": "Das Passwort muss mindestens 6 Zeichen haben.",
+      "errTaken": "Diese E-Mail ist bereits registriert.",
+      "errGeneric": "Etwas ist schiefgelaufen. Versuche es erneut.",
+      "haveAccount": "Schon ein Konto? Lade die App herunter",
+      "toApp": "App herunterladen"
+    },
+    "app": {
+      "title": "App herunterladen",
+      "subtitle": "Lade deine Stems vom Handy hoch. Melde dich mit der E-Mail und dem Passwort deiner Registrierung an.",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "Bald verfugbar",
+      "note": "Interne App: du brauchst ein freigegebenes Konto zum Anmelden.",
+      "needAccount": "Kein Konto? Hier registrieren"
+    },
+    "landingCta": "Ladst du oft hoch? Registriere dich und nutze die App"
   }
 }

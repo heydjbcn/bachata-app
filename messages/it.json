@@ -419,6 +419,37 @@
       "heading": "Sei un musicista? Condividi il tuo sound con il mondo.",
       "subtitle": "Carica i tuoi stems su BachatApp Studio",
       "button": "Invia la tua musica"
-    }
+    },
+    "register": {
+      "title": "Registrati come artista",
+      "subtitle": "Crea il tuo account per caricare i tuoi stems dall'app.",
+      "name": "Nome completo",
+      "namePlaceholder": "Il tuo nome o nome d'arte",
+      "email": "Email",
+      "emailPlaceholder": "tu@esempio.com",
+      "password": "Password",
+      "passwordPlaceholder": "Almeno 6 caratteri",
+      "submit": "Crea account",
+      "submitting": "Creazione...",
+      "successTitle": "Account creato",
+      "success": "Il tuo account e in attesa di approvazione. Lo esamineremo e ti avviseremo. Una volta approvato, scarica l'app ed entra con la tua email e password.",
+      "errName": "Inserisci il tuo nome.",
+      "errEmail": "Inserisci un'email valida.",
+      "errPassword": "La password deve avere almeno 6 caratteri.",
+      "errTaken": "Questa email e gia registrata.",
+      "errGeneric": "Qualcosa e andato storto. Riprova.",
+      "haveAccount": "Hai gia un account? Scarica l'app",
+      "toApp": "Scarica l'app"
+    },
+    "app": {
+      "title": "Scarica l'app",
+      "subtitle": "Carica i tuoi stems dal telefono. Accedi con l'email e la password con cui ti sei registrato.",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "Presto disponibile",
+      "note": "App interna: serve un account approvato per accedere.",
+      "needAccount": "Non hai un account? Registrati qui"
+    },
+    "landingCta": "Carichi spesso? Registrati e usa l'app"
   }
 }

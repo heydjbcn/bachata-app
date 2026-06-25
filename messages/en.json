@@ -419,6 +419,37 @@
       "heading": "Are you a musician? Share your sound with the world.",
       "subtitle": "Upload your stems to BachatApp Studio",
       "button": "Submit your music"
-    }
+    },
+    "register": {
+      "title": "Register as an artist",
+      "subtitle": "Create your account to upload your stems from the app.",
+      "name": "Full name",
+      "namePlaceholder": "Your name or stage name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "At least 6 characters",
+      "submit": "Create account",
+      "submitting": "Creating...",
+      "successTitle": "Account created",
+      "success": "Your account is pending approval. We'll review it and let you know. Once approved, download the app and log in with your email and password.",
+      "errName": "Please enter your name.",
+      "errEmail": "Please enter a valid email address.",
+      "errPassword": "Password must be at least 6 characters.",
+      "errTaken": "That email is already registered.",
+      "errGeneric": "Something went wrong. Please try again.",
+      "haveAccount": "Already have an account? Download the app",
+      "toApp": "Download the app"
+    },
+    "app": {
+      "title": "Download the app",
+      "subtitle": "Upload your stems from your phone. Log in with the email and password you registered.",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "Available soon",
+      "note": "Internal app: you need an approved account to log in.",
+      "needAccount": "Don't have an account? Register here"
+    },
+    "landingCta": "Upload often? Register and use the app"
   }
 }

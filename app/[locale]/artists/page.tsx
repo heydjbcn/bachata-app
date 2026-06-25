@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ArtistsHero } from "@/components/artists/ArtistsHero";
@@ -50,6 +51,7 @@ export default async function ArtistsPage({ params }: Props) {
 
 function FormHeading() {
   const t = useTranslations("artists.form");
+  const ta = useTranslations("artists");
   return (
     <div className="text-center">
       <p className="font-heading text-sm font-semibold uppercase tracking-[0.25em] text-[#ff914d]">
@@ -58,6 +60,12 @@ function FormHeading() {
       <h2 className="mt-3 font-heading text-4xl font-bold leading-[1.05] text-white sm:text-5xl">
         {t("title")}
       </h2>
+      <Link
+        href="/artists/register"
+        className="lg-ghost mt-6 inline-block rounded-full px-5 py-2.5 text-sm font-medium text-white hover:scale-[1.03]"
+      >
+        {ta("landingCta")}
+      </Link>
     </div>
   );
 }

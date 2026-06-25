@@ -419,6 +419,37 @@
       "heading": "음악가이신가요? 당신의 사운드를 세상과 나누세요.",
       "subtitle": "BachatApp Studio에 스템을 업로드하세요",
       "button": "음악 제출하기"
-    }
+    },
+    "register": {
+      "title": "아티스트로 등록",
+      "subtitle": "앱에서 스템을 업로드하려면 계정을 만드세요.",
+      "name": "이름",
+      "namePlaceholder": "이름 또는 활동명",
+      "email": "이메일",
+      "emailPlaceholder": "you@example.com",
+      "password": "비밀번호",
+      "passwordPlaceholder": "최소 6자",
+      "submit": "계정 만들기",
+      "submitting": "생성 중...",
+      "successTitle": "계정 생성됨",
+      "success": "계정이 승인 대기 중입니다. 검토 후 알려드리겠습니다. 승인되면 앱을 다운로드하고 이메일과 비밀번호로 로그인하세요.",
+      "errName": "이름을 입력해 주세요.",
+      "errEmail": "유효한 이메일을 입력해 주세요.",
+      "errPassword": "비밀번호는 최소 6자여야 합니다.",
+      "errTaken": "이미 등록된 이메일입니다.",
+      "errGeneric": "문제가 발생했습니다. 다시 시도해 주세요.",
+      "haveAccount": "이미 계정이 있나요? 앱 다운로드",
+      "toApp": "앱 다운로드"
+    },
+    "app": {
+      "title": "앱 다운로드",
+      "subtitle": "휴대폰에서 스템을 업로드하세요. 등록한 이메일과 비밀번호로 로그인하세요.",
+      "ios": "iOS (iPhone / iPad)",
+      "android": "Android",
+      "comingSoon": "곧 제공 예정",
+      "note": "내부 앱: 로그인하려면 승인된 계정이 필요합니다.",
+      "needAccount": "계정이 없나요? 여기서 등록하세요"
+    },
+    "landingCta": "자주 올리시나요? 등록하고 앱을 사용하세요"
   }
 }

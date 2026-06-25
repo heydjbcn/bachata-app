@@ -11,7 +11,10 @@ import {
   LogOut,
   Music2,
   Search,
+  Globe,
+  Users,
 } from "lucide-react";
+import { MusiciansPanel } from "@/components/admin/MusiciansPanel";
 
 type FileMeta = { id?: string; name?: string; size?: number };
 type Submission = {
@@ -58,6 +61,7 @@ export function AdminDashboard({
   email: string;
 }) {
   const router = useRouter();
+  const [view, setView] = useState<"web" | "musicians">("musicians");
   const [subs, setSubs] = useState<Submission[]>(initial);
   const [filter, setFilter] = useState<"all" | "new" | "reviewed">("all");
   const [q, setQ] = useState("");
@@ -147,6 +151,34 @@ export function AdminDashboard({
         </button>
       </div>
 
+      {/* conmutador Músicos (app) / Web (formulario) */}
+      <div className="mt-6 flex gap-1.5">
+        <button
+          onClick={() => setView("musicians")}
+          className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+            view === "musicians"
+              ? "bg-[#ff914d] text-black"
+              : "border border-white/12 text-white/70 hover:text-white"
+          }`}
+        >
+          <Users className="size-4" /> Musicos (app)
+        </button>
+        <button
+          onClick={() => setView("web")}
+          className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+            view === "web"
+              ? "bg-[#ff914d] text-black"
+              : "border border-white/12 text-white/70 hover:text-white"
+          }`}
+        >
+          <Globe className="size-4" /> Web (formulario)
+        </button>
+      </div>
+
+      {view === "musicians" && <MusiciansPanel />}
+
+      {view === "web" && (
+        <>
       {/* filtros + buscador */}
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <div className="flex gap-1.5">
@@ -295,6 +327,8 @@ export function AdminDashboard({
           </article>
         ))}
       </div>
+        </>
+      )}
     </main>
   );
 }

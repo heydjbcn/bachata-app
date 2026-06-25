@@ -7,6 +7,14 @@ export const STORE_LINKS = {
   email: "support@bachatappstudio.com",
 };
 
+// Enlaces de descarga de la app interna de músicos (se rellenan en Fase C:
+// iOS unlisted = apps.apple.com/app/id…; Android = URL directa del APK).
+// Mientras estén vacíos, la página muestra "Disponible pronto".
+export const STUDIO_APP_LINKS = {
+  ios: "",
+  android: "",
+};
+
 // Los anclas de sección apuntan a la home ("/#..") para que funcionen también
 // desde sub-páginas como /artists. "forArtists" es una página propia (Link).
 export const NAV = [
