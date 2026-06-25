@@ -13,13 +13,15 @@ export function ArtistsStats() {
           const Icon = ICONS[i];
           return (
             <div key={i} className="lg-card rounded-2xl p-6">
-              <span className="flex size-11 items-center justify-center rounded-xl border border-[#ff914d]/30 bg-[#ff914d]/10 text-[#ff914d]">
-                <Icon className="size-5" />
-              </span>
-              <h3 className="mt-4 font-heading text-lg font-bold text-white">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
+              <div className="flex items-center gap-3">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-[#ff914d]/30 bg-[#ff914d]/10 text-[#ff914d]">
+                  <Icon className="size-5" />
+                </span>
+                <h3 className="font-heading text-lg font-bold text-white">
+                  {s.title}
+                </h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-white/60">
                 {s.text}
               </p>
             </div>
