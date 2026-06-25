@@ -53,6 +53,16 @@ export function Mixer() {
 
   const initCtx = () => {
     if (ctxRef.current) return;
+    // iOS 16.4+: forzar sesión "playback" para que el Web Audio IGNORE el
+    // interruptor de silencio del móvil (como hace un <video> con sonido).
+    // Sin esto, con el móvil en silencio los stems "se reproducen" pero no
+    // suenan hasta que un media nativo activa la sesión de reproducción.
+    try {
+      const ns = navigator as Navigator & {
+        audioSession?: { type: string };
+      };
+      if (ns.audioSession) ns.audioSession.type = "playback";
+    } catch {}
     const ctx = new (window.AudioContext ||
       (window as unknown as { webkitAudioContext: typeof AudioContext })
         .webkitAudioContext)();
