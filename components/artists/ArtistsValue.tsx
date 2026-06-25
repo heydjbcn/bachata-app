@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export function ArtistsValue() {
@@ -18,17 +19,29 @@ export function ArtistsValue() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {items.map((it) => (
-            <div key={it.n} className="lg-card rounded-2xl p-6">
+            <article
+              key={it.n}
+              className="flex flex-col rounded-3xl border border-white/8 bg-[#0c0c0c] p-7"
+            >
               <span className="font-heading text-3xl font-bold text-gradient">
                 {it.n}
               </span>
               <h3 className="mt-3 font-heading text-xl font-bold leading-snug text-white">
                 {it.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
+              <p className="mt-3 text-sm leading-relaxed text-white/55">
                 {it.text}
               </p>
-            </div>
+              <div className="mt-auto border-t border-white/8 pt-5">
+                <Image
+                  src="/assets/Logo-Bachatappstudio.png"
+                  alt="BachatAppStudio"
+                  width={200}
+                  height={53}
+                  className="h-9 w-auto opacity-90"
+                />
+              </div>
+            </article>
           ))}
         </div>
       </div>
