@@ -44,12 +44,12 @@ export function Header() {
           >
             {t("forArtists")}
           </Link>
-          <a
-            href="#download"
+          <Link
+            href={{ pathname: "/", hash: "download" }}
             className="shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold text-black hover:scale-[1.03] lg-orange sm:px-5 sm:py-2.5"
           >
             {t("getApp")}
-          </a>
+          </Link>
           <LanguageSelector />
         </div>
       </div>
