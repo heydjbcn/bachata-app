@@ -73,6 +73,10 @@ export function Footer() {
 
         <p className="mt-8 text-xs text-white/45">
           @2025 BachatAppStudio. {t("rights")} ·{" "}
+          <Link href="/artists" className="hover:text-white/80">
+            {t("forArtists")}
+          </Link>{" "}
+          ·{" "}
           <Link href="/privacy-policy" className="hover:text-white/80">
             {t("privacy")}
           </Link>{" "}

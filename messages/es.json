@@ -10,7 +10,8 @@
     "reviews": "Opiniones",
     "getApp": "Descargar app",
     "openMenu": "Abrir menú",
-    "changeLanguage": "Cambiar idioma"
+    "changeLanguage": "Cambiar idioma",
+    "forArtists": "Para artistas"
   },
   "hero": {
     "badge": "La eligen bailarines y músicos profesionales de bachata",
@@ -189,7 +190,8 @@
     "rights": "Todos los derechos reservados.",
     "privacy": "Política de privacidad",
     "terms": "Términos y condiciones",
-    "backHome": "← Volver al inicio"
+    "backHome": "← Volver al inicio",
+    "forArtists": "Para artistas"
   },
   "privacy": {
     "title": "Política de Privacidad de BachatApp Studio",
@@ -276,5 +278,145 @@
     "s7": "Los términos pueden revisarse sin previo aviso; el uso continuado implica la aceptación de los términos vigentes.",
     "s8Title": "8. Legislación aplicable",
     "s8": "Estos términos se rigen por la legislación de los EAU, con jurisdicción exclusiva de los tribunales de los EAU."
+  },
+  "artists": {
+    "metadata": {
+      "title": "Para artistas — BachatAppStudio",
+      "description": "Sube tus stems y deja que bailarines, profesores y festivales de todo el mundo estudien y usen tu música dentro de BachatApp Studio."
+    },
+    "nav": {
+      "forArtists": "Para artistas"
+    },
+    "hero": {
+      "eyebrow": "Creado para artistas de bachata y musica tropical",
+      "title": "Tu musica. Estudiada en todo el mundo.",
+      "lead": "Haz que bailarines, profesores y festivales vivan tu musica como nunca antes. Sube tus stems y posiciona tu sonido dentro de un movimiento global donde los artistas son descubiertos, estudiados y celebrados.",
+      "ctaUpload": "Sube tus stems",
+      "ctaTerms": "Ver terminos de uso",
+      "note": "Mantienes la propiedad total de tu musica. Solo otorgas derechos de uso dentro de BachatApp Studio."
+    },
+    "stats": [
+      {
+        "title": "Global",
+        "text": "Llega a escuelas de baile, profesores y comunidades de festivales de todo el mundo."
+      },
+      {
+        "title": "Educativo",
+        "text": "Tus arreglos se pueden estudiar por instrumento, estructura y musicalidad."
+      },
+      {
+        "title": "No exclusivo",
+        "text": "Conservas tu copyright mientras permites un uso real dentro de la plataforma."
+      }
+    ],
+    "value": {
+      "eyebrow": "Propuesta de valor",
+      "title": "Mas que reproducciones. Tu musica se convierte en referencia.",
+      "lead": "BachatApp Studio ayuda a los artistas a ir mas alla de la escucha pasiva. Tu musica se vive en clases, talleres y espacios de festivales donde la gente presta atencion al timing, la textura, los instrumentos y el feeling.",
+      "items": [
+        {
+          "n": "01",
+          "title": "Exposicion global con intencion",
+          "text": "Tu musica llega a bailarines, instructores y comunidades de eventos que buscan activamente canciones que inspiren entrenamiento, performance y musicalidad."
+        },
+        {
+          "n": "02",
+          "title": "Estudiada, no solo escuchada",
+          "text": "Quien la escucha puede aislar partes, entender los arreglos y conectar mas a fondo con lo que hace especial a la cancion."
+        },
+        {
+          "n": "03",
+          "title": "Util en escuelas y festivales",
+          "text": "Tus stems pueden apoyar clases, talleres y la programacion de festivales en todo el mundo."
+        },
+        {
+          "n": "04",
+          "title": "Conviertete en artista de referencia",
+          "text": "Los artistas que comparten su musica para un aprendizaje mas profundo destacan en las escenas de bachata, merengue, salsa y dembow."
+        }
+      ]
+    },
+    "how": {
+      "eyebrow": "Como funciona",
+      "title": "Un camino simple desde la subida hasta las pistas de baile del mundo.",
+      "lead": "El proceso es intencionadamente sencillo. Tu nos das tus stems, nosotros los preparamos para la plataforma y tu musica pasa a formar parte de una experiencia que usan bailarines y educadores de todo el mundo.",
+      "steps": [
+        {
+          "title": "Sube tus stems",
+          "text": "Envia instrumentos separados o archivos de produccion agrupados en formatos habituales."
+        },
+        {
+          "title": "Integramos tu musica en BachatApp Studio",
+          "text": "Preparamos tus pistas para el aprendizaje interactivo, para que los usuarios exploren los detalles de los arreglos con claridad."
+        },
+        {
+          "title": "Bailarines de todo el mundo aprenden y usan tu musica",
+          "text": "Profesores, escuelas y festivales pueden usar la musica para clases, talleres y sesiones educativas."
+        }
+      ]
+    },
+    "form": {
+      "eyebrow": "Envio de artista",
+      "title": "Envia tu musica en un flujo simple.",
+      "cardTitle": "Formulario de artista",
+      "cardSubtitle": "Cuentanos quien eres y como quieres que se posicione tu musica dentro de la plataforma.",
+      "fullName": "Nombre completo",
+      "fullNamePlaceholder": "Tu nombre legal o completo",
+      "artisticName": "Nombre artistico",
+      "artisticNamePlaceholder": "Nombre artistico o de escena",
+      "email": "Email",
+      "emailPlaceholder": "artista@ejemplo.com",
+      "genre": "Genero musical",
+      "genrePlaceholder": "Selecciona un genero",
+      "genres": {
+        "bachata": "Bachata",
+        "merengue": "Merengue",
+        "salsa": "Salsa",
+        "dembow": "Dembow",
+        "other": "Otro"
+      },
+      "description": "Breve descripcion del artista",
+      "descriptionPlaceholder": "Comparte tu historia, tu sonido, tu trayectoria, tus influencias o por que deberia destacar tu musica.",
+      "descriptionTip": "Consejo: menciona tu estilo, tu publico y que hace unico a tu catalogo.",
+      "uploadTitle": "Seccion de subida de stems",
+      "uploadSubtitle": "Sube tus stems (mejor con instrumentos separados). Se admiten varios archivos.",
+      "dropTitle": "Arrastra y suelta tus archivos aqui",
+      "dropSubtitle": "O haz clic para buscar. Se aceptan: WAV y MP3.",
+      "ready": "Listo",
+      "agreementTitle": "Acuerdo de copyright y uso",
+      "agreementSubtitle": "Lenguaje claro, alcance definido y proteccion de derechos pensada para el artista.",
+      "agreementHeading": "Acuerdo de derechos de uso de BachatApp Studio",
+      "agreementP1": "El artista conserva en todo momento la propiedad total y el copyright de toda la musica y los stems enviados.",
+      "agreementP2": "El artista otorga a BachatApp Studio una licencia no exclusiva, mundial y libre de regalias para alojar, reproducir, procesar, mostrar y poner los stems a disposicion dentro de la plataforma con fines educativos, promocionales y de experiencia.",
+      "agreementUsersTitle": "Los usuarios de BachatApp Studio pueden:",
+      "agreementBullets": [
+        "Escuchar la musica",
+        "Aislar instrumentos y stems",
+        "Descargar stems dentro de la app",
+        "Usar la musica con fines educativos",
+        "Usar la musica en clases de baile, talleres y festivales de todo el mundo"
+      ],
+      "agreementP3": "La musica no se revendera ni se redistribuira como contenido musical comercial independiente. El proposito de esta licencia es educativo, promocional y de experiencia dentro de la plataforma.",
+      "agreementP4": "Esta licencia es no exclusiva, lo que significa que el artista sigue siendo libre de distribuir y comercializar la musica en otros lugares.",
+      "agree": "Acepto los terminos y otorgo los derechos de uso descritos arriba",
+      "submit": "Enviar mi musica",
+      "submitting": "Enviando...",
+      "errFullName": "Introduce tu nombre completo.",
+      "errArtisticName": "Introduce tu nombre artistico.",
+      "errEmail": "Introduce una direccion de email valida.",
+      "errGenre": "Selecciona tu genero musical.",
+      "errDescription": "Anade una breve descripcion del artista.",
+      "errFiles": "Sube al menos un stem o archivo de audio antes de enviar.",
+      "errAgree": "Debes aceptar los terminos de derechos de uso antes de enviar.",
+      "errType": "Solo se admiten archivos .wav y .mp3.",
+      "errUpload": "La subida ha fallado. Intentalo de nuevo.",
+      "errBig": "Este archivo es muy grande y puede fallar al subirse. Se recomienda MP3.",
+      "success": "Envio recibido. Tu paquete de musica esta listo para revision y nuestro equipo se pondra en contacto para el siguiente paso de integracion."
+    },
+    "cta": {
+      "heading": "Eres musico? Comparte tu sonido con el mundo.",
+      "subtitle": "Sube tus stems a BachatApp Studio",
+      "button": "Envia tu musica"
+    }
   }
 }

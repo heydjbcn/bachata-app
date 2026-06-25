@@ -7,11 +7,23 @@ export const STORE_LINKS = {
   email: "support@bachatappstudio.com",
 };
 
+// Los anclas de sección apuntan a la home ("/#..") para que funcionen también
+// desde sub-páginas como /artists. "forArtists" es una página propia (Link).
 export const NAV = [
-  { key: "features", href: "#features" },
-  { key: "mixer", href: "#mixer" },
-  { key: "musicians", href: "#musicians" },
-  { key: "reviews", href: "#testimonials" },
+  { key: "features", href: "/#features" },
+  { key: "mixer", href: "/#mixer" },
+  { key: "musicians", href: "/#musicians" },
+  { key: "reviews", href: "/#testimonials" },
+] as const;
+
+// Géneros del formulario de artistas (las etiquetas se traducen vía i18n
+// "artists.form.genres.<value>"; el value es el que se guarda en backend).
+export const ARTIST_GENRES = [
+  "bachata",
+  "merengue",
+  "salsa",
+  "dembow",
+  "other",
 ] as const;
 
 export const HERO_STATS = [

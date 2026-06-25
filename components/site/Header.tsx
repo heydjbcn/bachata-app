@@ -34,6 +34,12 @@ export function Header() {
               {t(item.key as "features" | "mixer" | "musicians" | "reviews")}
             </a>
           ))}
+          <Link
+            href="/artists"
+            className="rounded-full px-4 py-1.5 text-sm font-medium text-[#ffb98a] transition-colors hover:bg-[#ff914d]/10 hover:text-[#ff914d]"
+          >
+            {t("forArtists")}
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">

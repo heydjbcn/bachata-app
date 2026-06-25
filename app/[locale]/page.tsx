@@ -7,7 +7,7 @@ import { Marquee } from "@/components/site/Marquee";
 import { Mixer } from "@/components/site/Mixer";
 import { FeatureSplit } from "@/components/site/FeatureSplit";
 import { FeatureGrid } from "@/components/site/FeatureGrid";
-import { ChoiceCards } from "@/components/site/ChoiceCards";
+import { ArtistsCta } from "@/components/artists/ArtistsCta";
 import { Musicians } from "@/components/site/Musicians";
 import { Testimonials } from "@/components/site/Testimonials";
 import { VideoBlock } from "@/components/site/VideoBlock";
@@ -93,7 +93,7 @@ function HomeContent() {
           badges
         />
 
-        <ChoiceCards />
+        <ArtistsCta />
         <Musicians />
 
         <CtaBand
